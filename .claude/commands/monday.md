@@ -1,0 +1,1 @@
+Read and execute the skill at skills/monday/SKILL.md exactly as instructed.
