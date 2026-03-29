@@ -112,8 +112,8 @@ Yes: "Cloudflare's stablecoin doesn't exist. The strategy does."
 Yes: "The stablecoin is optional. The tollbooth isn't."
 The chosen subject line sits above the sponsor slot
 as the post title. It is not repeated inside the body.
-DESCRIPTION
-One sentence. 160 characters maximum.
+SEO DESCRIPTION (up to 160 characters)
+One sentence, 160 characters maximum.
 This is the Substack post subtitle and the email
 preview text — the line readers see under the subject
 line before they open. Make it earn the click.
@@ -124,6 +124,21 @@ Yes: "Everyone wrote 'Cloudflare launches stablecoin.'
 Six months later, the token doesn't exist.
 The strategy behind it is worth understanding."
 Always confirm character count is 160 or under.
+OUTPUT FORMAT FOR SUBJECT OPTIONS + SEO DESCRIPTION
+These must appear as a dedicated metadata block at the
+very top of the Notion page and draft, before the H1
+headline and all sponsor slots. Format exactly as:
+---
+**Subject Line Options**
+1. [Best option]
+2. [Second option]
+3. [Third option]
+**SEO Description**
+[Description text] ([N] chars)
+---
+This block is not part of the published body. It is
+production metadata for the editor to select from
+before scheduling the post.
 ---
 [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
 ---
@@ -193,8 +208,11 @@ Run before saving. Fix all failures before proceeding.
 [ ] Unique position is expressed clearly in the draft
 [ ] 3 subject line options provided, ranked
 [ ] Subject line options are under 60 characters
-[ ] Description present and 160 characters or under
-[ ] Description does not repeat the subject line
+[ ] SEO Description present and 160 characters or under
+[ ] SEO Description does not repeat the subject line
+[ ] Subject options + SEO Description appear as a
+    dedicated metadata block at top of Notion page
+    and draft, before the H1 headline
 [ ] Opener is not a definition or rhetorical question
 [ ] Closer is a point of view, not a summary
 [ ] All four body sections have witty, story-specific
