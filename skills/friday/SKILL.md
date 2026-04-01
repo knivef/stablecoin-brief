@@ -83,10 +83,48 @@ SUBJECT LINE OPTIONS (3, ranked)
 At least one must lead with the stat.
 Example: "Stablecoins just crossed $300B.
 Here is what that number actually means."
+DESCRIPTION
+One sentence. 160 characters maximum.
+This is the Substack post subtitle and email preview
+text. Tease the most counterintuitive insight in the
+edition. Do not repeat the subject line. Do not
+summarize. Make it earn the click.
+Wrong: "This week's stablecoin news, including volume
+records and regulatory updates."
+Right: "USDC's supply is half of Tether's. It moved
+twice the volume. That gap tells you everything about
+where stablecoin utility is actually going."
+Always confirm the character count is 160 or under.
 ---
 [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
 ---
-THE STAT (section header)
+INTRO (100-150 words)
+Spend most of the intro in the world of pop culture
+or current affairs. Stay there. Develop the hook.
+Segue to the newsletter only in the final sentence,
+and do it subtly — a single line that bridges the
+outside world to the stablecoin industry without
+explaining what is in the brief.
+No throat-clearing. No "this week in stablecoins."
+No listing what is coming. The reader should feel
+gently pulled in, not briefed.
+Wrong: "There was a lot happening this week. The
+legislation got messy and here is what you need
+to know about it."
+Right: "Nobody's bracket survived the first weekend.
+That is not a metaphor yet... The bracket is not a
+prediction. It is a document of confidence right
+before confidence gets humbled. This week, the
+stablecoin industry had its own bracket moment."
+---
+STAT SECTION HEADER
+Give this section a witty, stat-specific header.
+Not the generic label. Make it reflect what the
+number is actually saying this week.
+Wrong: ## THE STAT
+Right: ## The Number Nobody In TradFi Is Ready For
+Right: ## USDC's Market Share Problem Is Actually a Velocity Story
+Right: ## $1.8 Trillion. In a Month.
 THE NUMBER
 Display it prominently. Bold it.
 2-3 sentences of context immediately after:
@@ -97,17 +135,43 @@ Display it prominently. Bold it.
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
-THE SNIPPETS (3-4 items from ranked list)
-Same format as Wednesday snippets:
-- Bold hyperlinked headline
+SNIPPETS SECTION HEADER
+Give this section a header that names the week's
+dominant theme across the snippets, not a generic label.
+Wrong: ## THE SNIPPETS
+Right: ## Meanwhile, in the Legislation Dumpster Fire
+Right: ## Three Things That Happened While You Were Watching the Stat
+Right: ## The Week in Regulatory Chaos
+SNIPPETS (3-4 items from ranked list)
+Each snippet has a bold headline (not hyperlinked),
+followed by 2-4 sentences with inline source links.
+- Bold headline: what happened, plain text, no link
 - 2-4 sentences: what happened, key number,
   why it matters
-- Source linked inline
-WEEKEND READ
+- Every snippet must have at least one inline link
+  anchored to a meaningful phrase: a company doing
+  something, an action verb, or a data point
+- Never link a generic word like "here", "this",
+  "report", or "announced"
+- No floating source tags at sentence ends
+Wrong: **[Coinbase Rejects Clarity Act](url)**
+       Coinbase told the Senate it cannot support...
+Right: **Coinbase Rejects Clarity Act**
+       Coinbase told the Senate it [cannot support
+       the current draft](url), citing...
+Wrong: ...Senate vote count gets harder. [Yahoo Finance](url)
+Right: ...Coinbase shares [fell 8%](url) on the news.
+WEEKEND READ HEADER
+Give this section a short, specific header that
+tells the reader what kind of read this is.
+Wrong: ## WEEKEND READ
+Right: ## If You Read One Thing This Weekend
+Right: ## Your Saturday Morning Brief
+Right: ## The Long Read
 One short paragraph.
 What it is, who wrote it, why this specific reader
 should spend their Saturday morning on it.
-Link the title. Be specific, not generic.
+Link the title inline. Be specific, not generic.
 CLOSER (1 sentence)
 Tease Monday's Big Read. Create curiosity.
 Do not reveal the full story.
@@ -120,11 +184,17 @@ Do not reveal the full story.
     equivalent where applicable
 [ ] Observation in stat section is earned, not forced
 [ ] No snippets duplicated from Monday or Wednesday
-[ ] All snippets have source links
+[ ] All snippets have at least one inline source link
+    anchored to a meaningful phrase, not a headline
 [ ] Each snippet is 2-4 sentences only
 [ ] Weekend Read is substantive, not a recap
 [ ] Weekend Read has a specific "why read it" reason
 [ ] 3 subject line options provided, ranked
+[ ] Description present, 160 characters or under, does not repeat subject line
+[ ] Intro is 100-150 words with a pop culture or current affairs hook
+[ ] Stat section has a witty, stat-specific header (not "THE STAT")
+[ ] Snippets section has a theme-based header (not "THE SNIPPETS")
+[ ] Weekend Read section has a specific header (not "WEEKEND READ")
 [ ] Slot 1: between subject lines and The Stat
 [ ] Slot 2: between The Stat and The Snippets
 [ ] Closer teases Monday
@@ -137,6 +207,32 @@ Research: editions/[YYYY-MM-DD]-friday/research-brief.md
 Draft: editions/[YYYY-MM-DD]-friday/draft.md
 Stat: [THE NUMBER in one line]
 Snippets used: [N] of [N] researched"
+---
+## Step 4: Upload to Notion
+Upload the completed draft to the Notion folder where Friday editions are stored.
+
+NOTION STRUCTURE:
+Stablecoin Brief > Friday > [Month YYYY] > [YYYY-MM-DD]
+
+Friday root page ID: 32b7f3d2-e709-80be-b14b-f37d24801739
+
+PROCEDURE:
+1. Fetch the Friday root page to get the list of month sub-pages.
+2. Find the page matching the current month (e.g., "March 2026").
+   - If it does not exist, create it under the Friday root page with that title.
+3. Fetch the month page and check if a sub-page matching today's date (YYYY-MM-DD) exists.
+   - If it exists: use notion-update-page with command "replace_content" to overwrite
+     the placeholder content with the draft.
+   - If it does not exist: use notion-create-pages with the month page as parent,
+     set title to YYYY-MM-DD, and include the full draft as content.
+4. The Notion page content must match the draft exactly, using the same
+   markdown structure: subject lines, sponsor slots as H2 headers, stat section,
+   snippets with inline hyperlinks (no bold headline links), weekend read, and closer.
+   Sponsor slot format: ## [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
+
+Print to terminal after upload:
+"Notion: uploaded to Friday > [Month YYYY] > [YYYY-MM-DD]"
+
 ---
 ## Error Handling
 - Stat cannot be verified from primary source: flag it,
