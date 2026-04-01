@@ -61,13 +61,27 @@ INTRO (2 sentences max)
 Name the week's dominant theme.
 No throat-clearing. Get to the news immediately after.
 NEWS SNIPPETS (4-6 items)
-For each snippet:
-- Bold hyperlinked headline
+Each snippet has a bold headline (not hyperlinked),
+followed by 2-4 sentences with inline source links.
+- Bold headline: what happened, plain text, no link
 - 2-4 sentences: what happened, the key number,
   why it matters
-- Source linked inline
+- Every snippet must have at least one inline link
+  anchored to a meaningful phrase: a company doing
+  something, an action verb, or a data point
+- Never link a generic word like "here", "this",
+  "report", or "announced"
+- No floating source tags at sentence ends
 - No padding. No filler. Get in, deliver the fact,
   get out.
+Wrong: **[Nium Launches Stablecoin Card Platform](url)**
+       Nium launched a platform on March 30...
+Right: **Nium Launches Stablecoin Card Platform**
+       Nium [launched a stablecoin card issuance
+       platform](url) on March 30, letting businesses...
+Wrong: ...cutting time-to-market from months to days. [Nium](url)
+Right: ...the company says the platform [cuts time-to-market
+       from months to days](url).
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
@@ -82,7 +96,8 @@ Do not reveal the full story. Create curiosity.
 [ ] No filler phrases
 [ ] 3 subject line options provided, ranked
 [ ] Each snippet is 2-4 sentences only, no exceptions
-[ ] Every snippet has an inline source link
+[ ] Every snippet headline is plain bold (not hyperlinked)
+[ ] Every snippet has at least one inline source link anchored to a meaningful phrase
 [ ] Slot 1: between subject lines and intro
 [ ] Slot 2: between 3rd and 4th snippet
 [ ] Quick Hits are genuinely short (10 words max each)
