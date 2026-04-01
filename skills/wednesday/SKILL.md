@@ -71,6 +71,9 @@ followed by 2-4 sentences with inline source links.
   something, an action verb, or a data point
 - Never link a generic word like "here", "this",
   "report", or "announced"
+- Never use "per [Publication]" or "according to
+  [Source]" as the link anchor — link the claim,
+  not the attribution
 - No floating source tags at sentence ends
 - No padding. No filler. Get in, deliver the fact,
   get out.
@@ -82,6 +85,9 @@ Right: **Nium Launches Stablecoin Card Platform**
 Wrong: ...cutting time-to-market from months to days. [Nium](url)
 Right: ...the company says the platform [cuts time-to-market
        from months to days](url).
+Wrong: ...the language is "overly narrow," per [CoinDesk](url).
+Right: ...the industry [called the language "overly
+       narrow"](url) within hours of the draft's release.
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
