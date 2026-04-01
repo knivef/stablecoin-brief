@@ -92,7 +92,12 @@ Right: ...the industry [called the language "overly
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
 QUICK HITS (2-3 smaller items)
-Format: • [What happened] → [why it matters, 10 words max]
+Format: • [What happened, link anchored to the key
+  action or data point] → [why it matters, 10 words max]
+No trailing source tags. Link lives inside the hit itself.
+Wrong: ...comment period extended to May 18. ([FDIC](url))
+Right: FDIC [extends comment period to May 18](url) →
+       banks get 90 more days on stablecoin rules
 CLOSER (1 sentence)
 Tease Monday's Big Read. Make it sound essential.
 Do not reveal the full story. Create curiosity.
