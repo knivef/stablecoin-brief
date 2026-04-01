@@ -153,6 +153,9 @@ followed by 2-4 sentences with inline source links.
   something, an action verb, or a data point
 - Never link a generic word like "here", "this",
   "report", or "announced"
+- Never use "per [Publication]" or "according to
+  [Source]" as the link anchor — link the claim,
+  not the attribution
 - No floating source tags at sentence ends
 Wrong: **[Coinbase Rejects Clarity Act](url)**
        Coinbase told the Senate it cannot support...
@@ -161,6 +164,9 @@ Right: **Coinbase Rejects Clarity Act**
        the current draft](url), citing...
 Wrong: ...Senate vote count gets harder. [Yahoo Finance](url)
 Right: ...Coinbase shares [fell 8%](url) on the news.
+Wrong: ...the language is "overly narrow," per [CoinDesk](url).
+Right: ...the industry [called the language "overly
+       narrow"](url) within hours of the draft's release.
 WEEKEND READ HEADER
 Give this section a short, specific header that
 tells the reader what kind of read this is.
