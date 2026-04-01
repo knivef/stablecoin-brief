@@ -178,9 +178,15 @@ One short paragraph.
 What it is, who wrote it, why this specific reader
 should spend their Saturday morning on it.
 Link the title inline. Be specific, not generic.
-CLOSER (1 sentence)
-Tease Monday's Big Read. Create curiosity.
-Do not reveal the full story.
+CLOSER (1-2 sentences)
+A point of view. Not a summary. Not a tease for
+the next edition. End with what the week actually
+meant — a sharp observation, a verdict, or the
+one thing worth carrying into the weekend.
+Wrong: "Monday's piece goes inside the Clarity Act..."
+Right: "The stat and the news this week tell the same
+       story from different angles. The infrastructure
+       is ready. The rules are not."
 ---
 ## Step 3: Quality Check
 [ ] No em dashes
@@ -203,7 +209,7 @@ Do not reveal the full story.
 [ ] Weekend Read section has a specific header (not "WEEKEND READ")
 [ ] Slot 1: between subject lines and The Stat
 [ ] Slot 2: between The Stat and The Snippets
-[ ] Closer teases Monday
+[ ] Closer is a point of view, not a summary or next-edition tease
 [ ] Stat section: 100-150 words
 [ ] Total body: 350-550 words excluding sponsor slots
 Save to: editions/[YYYY-MM-DD]-friday/draft.md

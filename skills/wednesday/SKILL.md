@@ -98,9 +98,13 @@ No trailing source tags. Link lives inside the hit itself.
 Wrong: ...comment period extended to May 18. ([FDIC](url))
 Right: FDIC [extends comment period to May 18](url) →
        banks get 90 more days on stablecoin rules
-CLOSER (1 sentence)
-Tease Monday's Big Read. Make it sound essential.
-Do not reveal the full story. Create curiosity.
+CLOSER (1-2 sentences)
+A point of view. Not a summary. Not a tease for
+the next edition. The reader should finish with a
+clear sense of what this week's signal actually means.
+Wrong: "Monday's piece goes inside the Clarity Act..."
+Right: "A deal nobody loves has a better chance of
+       surviving markup than one side's perfect draft."
 ---
 ## Step 3: Quality Check
 [ ] No em dashes
@@ -112,7 +116,7 @@ Do not reveal the full story. Create curiosity.
 [ ] Slot 1: between subject lines and intro
 [ ] Slot 2: between 3rd and 4th snippet
 [ ] Quick Hits are genuinely short (10 words max each)
-[ ] Closer teases Monday without giving it away
+[ ] Closer is a point of view, not a summary or next-edition tease
 [ ] Total body: 300-500 words excluding sponsor slots
 Save to: editions/[YYYY-MM-DD]-wednesday/draft.md
 Print to terminal:
