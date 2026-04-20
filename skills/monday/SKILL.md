@@ -237,6 +237,38 @@ Research: editions/[YYYY-MM-DD]-monday/research-brief.md
 Draft: editions/[YYYY-MM-DD]-monday/draft.md
 Word count: [N] words"
 ---
+## Step 5: Publish to Notion
+Run after Step 4 passes. No confirmation needed.
+
+NOTION STRUCTURE
+Stablecoin Brief > Monday > [Month YYYY] > [YYYY-MM-DD]
+
+Monday page ID: 32b7f3d2-e709-80fa-916b-c571ee4728fb
+
+1. Fetch the Monday page using the ID above.
+2. Find the subpage matching the current month name
+   (e.g. "April 2026"). If it does not exist, create it
+   as a child of the Monday page before proceeding.
+3. Create a new page under the month page:
+   - Title: [YYYY-MM-DD] (the upcoming Monday's date)
+   - Content: the full draft in Notion Markdown
+
+CONTENT FORMAT
+Match the structure of existing Monday editions exactly:
+- Metadata block (Subject Line Options + SEO Description)
+  as bold text, no heading, at the very top
+- ## [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
+- Hook text (no section header)
+- ## [Story-specific What Happened subheading]
+- ## [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
+- ## [Story-specific Why It Matters subheading]
+- ## [Story-specific The Thing Nobody Is Talking About subheading]
+- ## [Story-specific What to Watch subheading]
+- Closer (no section header)
+
+Print to terminal:
+"Notion: [URL of created page]"
+---
 ## Error Handling
 - No strong story found: pick the best available,
   note the limitation at the top of the research brief
