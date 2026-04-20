@@ -103,13 +103,19 @@ STRUCTURE:
 SUBJECT LINE OPTIONS
 Provide 3, ranked best to worst.
 This is the Substack post title and the email subject
-line — they are the same field. Optimize for inbox.
-Target under 60 characters. Front-load the tension,
-the counterintuitive angle, or the complication.
-The reader decides whether to open based on this alone.
-Not: "Cloudflare Announces NET Dollar Stablecoin"
-Yes: "Cloudflare's stablecoin doesn't exist. The strategy does."
-Yes: "The stablecoin is optional. The tollbooth isn't."
+line — they are the same field. It is also what Google
+indexes when the post is published. Optimize for both:
+carry the primary keyword AND earn the email open.
+Target 60-70 characters. Lead with the primary keyword
+(product name, company name, or core topic), then layer
+in the tension, counterintuitive angle, or complication.
+Both signals matter equally.
+Wrong: "The stablecoin that hides itself"
+(punchy but no searchable keywords)
+Wrong: "Circle Payments Network Managed Payments Launch 2026"
+(keywords but no hook)
+Right: "Circle Payments Network Is Hiding Stablecoins Inside Bank Wires"
+(primary keyword front-loaded, tension intact)
 The chosen subject line sits above the sponsor slot
 as the post title. It is not repeated inside the body.
 SEO DESCRIPTION (up to 160 characters)
@@ -207,7 +213,9 @@ Run before saving. Fix all failures before proceeding.
 [ ] THE NUMBER has comparison context
 [ ] Unique position is expressed clearly in the draft
 [ ] 3 subject line options provided, ranked
-[ ] Subject line options are under 60 characters
+[ ] Subject line options are 60-70 characters
+[ ] Subject line #1 contains the primary keyword
+    (product name, company name, or core topic)
 [ ] SEO Description present and 160 characters or under
 [ ] SEO Description does not repeat the subject line
 [ ] Subject options + SEO Description appear as a
