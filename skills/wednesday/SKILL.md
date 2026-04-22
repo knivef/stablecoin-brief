@@ -67,6 +67,21 @@ Not: "The USDC flip nobody saw coming" (no keyword signal)
 Yes: "USDC Gains Ground: Pornhub, FDIC Rules, 12-Bank Euro Token"
 Yes: "BIS Flags $320B Stablecoin Market as Systemic Risk"
 Yes: "Tether Loses Market Share as GENIUS Act Moves to Markup"
+META DESCRIPTION
+One line, 140-160 characters. Appears in Google search
+results for the Substack web version. Write it after
+locking the subject lines.
+- Must include the word "stablecoin" or a stablecoin
+  name (USDC, USDT, GENIUS Act, MiCA, etc.)
+- Summarize 2-3 of the top stories in plain language
+- No clickbait. No filler. Reads like a search snippet.
+- End with a period.
+Not: "This week's stablecoin signal has everything."
+Yes: "BIS flags $320B stablecoin market as systemic risk,
+     12 banks launch a MiCA euro token, and FDIC sets
+     GENIUS Act redemption rules." (155 chars)
+Add to quality check: [ ] Meta description is 140-160
+characters and includes a primary stablecoin keyword
 ---
 [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
 ---
