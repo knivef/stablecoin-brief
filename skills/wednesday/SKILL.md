@@ -48,11 +48,25 @@ Use the top 4-6 items from the ranked research list.
 STRUCTURE:
 SUBJECT LINE OPTIONS
 Provide 3, ranked best to worst.
-Lead with the most interesting fact or tension.
+Each subject line must work as both an email open hook
+AND an SEO-friendly article title for the Substack
+web version (which gets indexed by Google).
+SEO RULES FOR SUBJECT LINES:
+- 55-70 characters
+- Lead with a primary keyword: the most searchable
+  entity or development (company name, regulation,
+  stablecoin name, market stat)
+- Include at least one named entity (USDC, USDT,
+  GENIUS Act, Circle, Tether, MiCA, BIS, etc.)
+- Specific beats clever: "FDIC Sets GENIUS Act
+  Stablecoin Rules" outranks "Washington Finally
+  Did Something" for search
+- Numbers and proper nouns improve ranking signal
 Not: "This week in stablecoins"
-Yes: "The USDC flip nobody saw coming"
-Yes: "Tether just lost its biggest market share
-in four years"
+Not: "The USDC flip nobody saw coming" (no keyword signal)
+Yes: "USDC Gains Ground: Pornhub, FDIC Rules, 12-Bank Euro Token"
+Yes: "BIS Flags $320B Stablecoin Market as Systemic Risk"
+Yes: "Tether Loses Market Share as GENIUS Act Moves to Markup"
 ---
 [SPONSOR SLOT 1 — $150 rack / $75 floor — Primary, top of email]
 ---
@@ -63,6 +77,19 @@ No throat-clearing. Get to the news immediately after.
 NEWS SNIPPETS (4-6 items)
 Each snippet has a bold headline (not hyperlinked),
 followed by 2-4 sentences with inline source links.
+SEO RULES FOR SNIPPET HEADLINES:
+Snippet headlines are indexed on the Substack web
+version. Write them to rank, not just to hook.
+- Format: [Entity] + [Action] + [Key Detail/Number]
+- Include the company name, regulation name, or
+  stablecoin name — not a pronoun or vague noun
+- Include a specific number or outcome where possible
+- 55-70 characters is the target range
+Not: "The Banks Are Moving" (no entities, no specifics)
+Not: "FDIC Drops Rules" (too vague, no keyword value)
+Yes: "FDIC Proposes GENIUS Act Stablecoin Rules: 2-Day Redemption Window"
+Yes: "12 European Banks Launch MiCA-Compliant Euro Stablecoin via Fireblocks"
+Yes: "Pornhub Switches Stablecoin Payouts from USDT to USDC"
 - Bold headline: what happened, plain text, no link
 - 2-4 sentences: what happened, the key number,
   why it matters
