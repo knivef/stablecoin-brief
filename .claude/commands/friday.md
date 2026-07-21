@@ -1,1 +1,1 @@
-Read and execute the skill at skills/friday/SKILL.md exactly as instructed.
+Read and execute the skill at skills/legacy/friday/SKILL.md exactly as instructed.

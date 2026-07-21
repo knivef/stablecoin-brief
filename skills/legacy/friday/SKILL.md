@@ -81,8 +81,15 @@ Proceed immediately to Step 2.
 STRUCTURE:
 SUBJECT LINE OPTIONS (3, ranked)
 At least one must lead with the stat.
-Example: "Stablecoins just crossed $300B.
+Write all three for SEO: front-load the primary
+keyword (coin name, metric, or regulatory body),
+include the specific number or action, and be
+descriptive enough to match search intent.
+Avoid pure cleverness that hides the topic.
+Example (not SEO): "Stablecoins just crossed $300B.
 Here is what that number actually means."
+Example (SEO): "Stablecoin Market Cap Crosses $300B:
+What the USDC vs USDT Supply Split Actually Signals"
 DESCRIPTION
 One sentence. 160 characters maximum.
 This is the Substack post subtitle and email preview
@@ -118,13 +125,15 @@ before confidence gets humbled. This week, the
 stablecoin industry had its own bracket moment."
 ---
 STAT SECTION HEADER
-Give this section a witty, stat-specific header.
-Not the generic label. Make it reflect what the
-number is actually saying this week.
+Give this section an SEO-friendly, stat-specific
+header. Include the specific metric, coin name, or
+data point so it can stand alone as a descriptive
+heading. Wit is welcome but must not replace clarity.
 Wrong: ## THE STAT
-Right: ## The Number Nobody In TradFi Is Ready For
-Right: ## USDC's Market Share Problem Is Actually a Velocity Story
-Right: ## $1.8 Trillion. In a Month.
+Wrong: ## The Number Nobody In TradFi Is Ready For
+Right: ## USDC Captures 80% of Organic Stablecoin Volume, First Time Since 2019
+Right: ## Stablecoin Market Cap Hits $1.8 Trillion: What the Monthly Surge Means
+Right: ## USDC Organic Volume Overtakes USDT Despite Half the Supply
 THE NUMBER
 Display it prominently. Bold it.
 2-3 sentences of context immediately after:
@@ -136,18 +145,103 @@ Display it prominently. Bold it.
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
 SNIPPETS SECTION HEADER
-Give this section a header that names the week's
-dominant theme across the snippets, not a generic label.
+Give this section an SEO-friendly header that names
+the specific regulatory actions, companies, or events
+covered. Use keywords that match what readers search
+for. Theme-based framing is fine alongside specifics.
 Wrong: ## THE SNIPPETS
-Right: ## Meanwhile, in the Legislation Dumpster Fire
-Right: ## Three Things That Happened While You Were Watching the Stat
-Right: ## The Week in Regulatory Chaos
+Wrong: ## Meanwhile, in the Legislation Dumpster Fire
+Right: ## Stablecoin Regulation This Week: FASB Disclosure Rules, Euro Stablecoin Launch, BIS Warning
+Right: ## GENIUS Act Update, Qivalis Euro Stablecoin, and MoneyGram USDC Expansion
+Right: ## Stablecoin Policy and Market Updates: Senate, FDIC, and On-Chain Data
 SNIPPETS (3-4 items from ranked list)
-Each snippet has a bold headline (not hyperlinked),
-followed by 2-4 sentences with inline source links.
-- Bold headline: what happened, plain text, no link
-- 2-4 sentences: what happened, key number,
-  why it matters
+Each snippet has three parts: bold headline, anchor line,
+then detail sentences with inline source links.
+
+PART A — BOLD HEADLINE
+What happened, plain text, no hyperlink.
+
+PART B — ANCHOR LINE
+One or two plain-English sentences immediately after the
+headline. This is the alpha — the non-obvious implication
+most coverage missed. It must function as a curiosity gap,
+not a context block. The reader should feel they are
+already ahead of the story before the detail starts.
+Write it so a reader who skims only this line still walks
+away with the insight.
+
+Wrong (states the obvious event):
+  "The Senate Banking Committee voted on the CLARITY Act."
+Wrong (explains context like a textbook):
+  "The CLARITY Act is a bill that would regulate stablecoins."
+Right (surfaces the non-obvious, creates curiosity):
+  "Congress passed a stablecoin bill. The biggest stablecoin
+  in the world cannot comply with it."
+Right (teases the alpha before the detail):
+  "The banking lobby spent a year pushing for this rule.
+  Then rejected the bill anyway."
+
+PART C — DETAIL (three beats, one paragraph each)
+Structure every snippet detail across three distinct beats.
+Each beat is its own paragraph. Do not combine beats.
+
+BEAT 1 — WHAT HAPPENED AND THE LOGIC BEHIND IT
+Open with what happened and immediately explain the
+reasoning or mechanism that makes it matter. Not just
+the event — the why behind the event. Give the reader
+the framework they need to follow the next two beats.
+
+Wrong: "The CLARITY Act passed committee 15-9."
+Right: "The CLARITY Act passed committee 15-9. The bill's
+       reserve mandate requires stablecoin issuers to back
+       every token with short-term US assets: Treasury bills
+       under 93 days, overnight repo, or Fed deposits.
+       The logic is deliberate — if a stablecoin functions
+       as a dollar substitute, its backing must hold its
+       dollar value under stress with no credit risk."
+
+BEAT 2 — WHY THE SUBJECT SPECIFICALLY PASSES OR FAILS THAT TEST
+Apply the logic from Beat 1 to the specific subject.
+Use numbers and named assets. Show the magnitude, not just
+the conclusion. Let the reader do the math and arrive at
+the implication themselves.
+
+Wrong: "Tether's reserves do not qualify."
+Right: "Tether holds roughly $9-10B in gold, $5-6B in
+       Bitcoin, and $9-10B in secured loans. Combined,
+       that is around $24-25B in assets that would not
+       qualify — roughly 13% of total reserves. Gold
+       fluctuates in dollar terms. Bitcoin fluctuates
+       more. Secured loans cannot be liquidated on demand."
+
+BEAT 3 — THE PRACTICAL CONSEQUENCE
+What actually changes because of this. Who wins, who
+loses, what happens next. Be specific — name the
+platforms, the companies, the deadlines. End with the
+sharpest version of the implication, not a hedge.
+
+Wrong: "This could have significant implications."
+Right: "If the bill becomes law and Tether cannot
+       restructure, US-regulated platforms like Coinbase
+       and Kraken face restrictions on offering USDT.
+       Circle's USDC would face no such restriction.
+       The bill the banking lobby tried to kill may hand
+       Circle its largest structural advantage yet."
+
+Include key numbers with comparison context throughout.
+One idea per paragraph — if a beat carries two distinct
+points, split the paragraph.
+
+ACRONYMS
+On first use of any legislation, regulatory body, or
+protocol, add a brief parenthetical: OCC (Office of the
+Comptroller of the Currency), GENIUS Act (Guiding and
+Establishing National Innovation for U.S. Stablecoins Act).
+Do not repeat the parenthetical after the first use.
+Stacking unexplained acronyms at the top of a snippet
+is the single fastest way to lose a reader.
+
+LINKING RULES
 - Every snippet must have at least one inline link
   anchored to a meaningful phrase: a company doing
   something, an action verb, or a data point
@@ -157,9 +251,12 @@ followed by 2-4 sentences with inline source links.
   [Source]" as the link anchor — link the claim,
   not the attribution
 - No floating source tags at sentence ends
+
 Wrong: **[Coinbase Rejects Clarity Act](url)**
        Coinbase told the Senate it cannot support...
 Right: **Coinbase Rejects Clarity Act**
+       Coinbase backed the deal publicly last week.
+       Now it doesn't.
        Coinbase told the Senate it [cannot support
        the current draft](url), citing...
 Wrong: ...Senate vote count gets harder. [Yahoo Finance](url)
@@ -168,12 +265,14 @@ Wrong: ...the language is "overly narrow," per [CoinDesk](url).
 Right: ...the industry [called the language "overly
        narrow"](url) within hours of the draft's release.
 WEEKEND READ HEADER
-Give this section a short, specific header that
-tells the reader what kind of read this is.
+Give this section an SEO-friendly header that names
+the specific piece, topic, or institution. Include
+the subject matter so it is findable and descriptive.
 Wrong: ## WEEKEND READ
-Right: ## If You Read One Thing This Weekend
-Right: ## Your Saturday Morning Brief
-Right: ## The Long Read
+Wrong: ## If You Read One Thing This Weekend
+Right: ## Weekend Read: White House Analysis of Stablecoin Yield Prohibition
+Right: ## Weekend Read: BIS Report on Stablecoin Stability and Systemic Risk
+Right: ## Weekend Read: Fed Research on Stablecoin Adoption Patterns in 2025
 One short paragraph.
 What it is, who wrote it, why this specific reader
 should spend their Saturday morning on it.
@@ -196,17 +295,41 @@ Right: "The stat and the news this week tell the same
     equivalent where applicable
 [ ] Observation in stat section is earned, not forced
 [ ] No snippets duplicated from Monday or Wednesday
+[ ] Each snippet has an anchor line immediately after the
+    bold headline — surfaces the non-obvious implication,
+    not a summary of the obvious event
+[ ] Anchor line reads as a curiosity gap, not a context block
+[ ] Each snippet detail runs three beats, each its own paragraph:
+    Beat 1 — what happened and the logic behind it
+    Beat 2 — why the subject specifically passes or fails
+              that test, with named assets and numbers
+    Beat 3 — the practical consequence, specific and sharp
+[ ] No beat is missing. No two beats are merged into one paragraph.
+[ ] Beat 2 includes named specifics and magnitude, not just conclusion
+[ ] Beat 3 ends on the sharpest version of the implication, not a hedge
+[ ] Each paragraph carries one idea only — split if two points appear
+[ ] First use of any legislation or regulatory acronym has
+    a parenthetical on its first appearance only
 [ ] All snippets have at least one inline source link
     anchored to a meaningful phrase, not a headline
-[ ] Each snippet is 2-4 sentences only
+[ ] Every linked claim has been verified against its source:
+    fetch each URL and confirm the specific number, quote,
+    or fact in the draft actually appears in that article.
+    Do not link a claim to an article that does not contain it.
+    If a source does not support the claim, either find one
+    that does or remove the hyperlink and present it as
+    editorial analysis.
+[ ] No link is anchored to an editorial inference — only
+    to a fact that appears in the linked source
+[ ] Each snippet detail is 2-4 sentences only
 [ ] Weekend Read is substantive, not a recap
 [ ] Weekend Read has a specific "why read it" reason
 [ ] 3 subject line options provided, ranked
 [ ] Description present, 160 characters or under, does not repeat subject line
 [ ] Intro is 100-150 words with a pop culture or current affairs hook
-[ ] Stat section has a witty, stat-specific header (not "THE STAT")
-[ ] Snippets section has a theme-based header (not "THE SNIPPETS")
-[ ] Weekend Read section has a specific header (not "WEEKEND READ")
+[ ] Stat section has an SEO-friendly header: includes specific metric, coin, or data point (not "THE STAT" or vague wit)
+[ ] Snippets section has an SEO-friendly header: names specific companies, regulators, or events covered (not "THE SNIPPETS" or theme-only label)
+[ ] Weekend Read section has an SEO-friendly header: names the specific topic or institution (not "WEEKEND READ" or generic label)
 [ ] Slot 1: between subject lines and The Stat
 [ ] Slot 2: between The Stat and The Snippets
 [ ] Closer is a point of view, not a summary or next-edition tease
