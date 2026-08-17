@@ -53,7 +53,12 @@ Prefer primary sources over aggregators. If only an aggregator covers a story, u
 
 ## Step 1: Research
 
-Research everything before writing a word. Four workstreams:
+Research everything before writing a word. Five workstreams:
+
+Two checks apply to every candidate in every workstream below, by default, not only when asked:
+
+- **Verify the real event date via primary source.** Web search summaries blend an older event with newer follow-up coverage (a rule published one week gets analysis coverage the next, which then reads as "this week's news" in search results). Before including any story, fetch the primary source and confirm the underlying event actually happened inside the Monday-Sunday coverage window, not just that some article discussing it was published in-window.
+- **Grep every past edition, not just the 1-2 most recent.** Run `grep -ril "<term>" editions/*/draft.md editions/*/research-brief.md` for each candidate's key terms (company, protocol, ticker) before it's allowed into the brief. A story can recur as a slow-building saga across non-adjacent editions weeks apart (a licensed issuer's launch covered at "targeted for next quarter," then "on track for later this year," then "launched"), where each mention reads like fresh news in isolation and only a full-archive search catches the pattern.
 
 ### A. The Big One (highlight story)
 
@@ -77,7 +82,11 @@ Gather the week's readings for the standing metrics table: total stablecoin mark
 
 ### D. Worth Your Time (2-4 picks)
 
-Longer-form pieces published this week: research reports, essays, policy papers, podcasts. Each must be genuinely worth the reader's Saturday morning; if nothing strong exists, run fewer picks rather than recommending a weak one. For audio, note the duration. None of these picks may reuse a URL already cited in The Big One or The Roundup: Worth Your Time exists to surface a different read, not to re-link a story the reader already saw above.
+Longer-form pieces published this week: research reports, essays, policy papers, podcasts. Each must be genuinely worth the reader's Saturday morning; if nothing strong exists, run fewer picks rather than recommending a weak one. For audio, note the duration. None of these picks may reuse a URL already cited in The Big One or The Roundup: Worth Your Time exists to surface a different read, not to re-link a story the reader already saw above. Confirm the publish date on the source itself, not on a search snippet describing it, before counting it as this week's.
+
+### E. Duplicate check
+
+Before finalizing story selection, grep the full archive for every candidate still in play (see the two default checks above). Log the result, even when it's a clean pass. Any confirmed duplicate or near-duplicate gets cut or swapped, not run a third time with a new headline.
 
 Save everything to `editions/[YYYY-MM-DD]-weekly/research-brief.md`:
 
@@ -102,7 +111,10 @@ Date: [DATE] | Coverage: [MON] to [SUN]
 [title, author, publication, URL, why read it, duration if audio]
 
 ## Discarded items
-[one-line reason each]
+[one-line reason each, including any candidate cut for failing the date-verification or duplicate check]
+
+## Duplicate check performed
+[terms searched, folders covered, and the result — confirmed clean, or what was cut/swapped and why]
 
 ## Aggregator links to swap
 [any non-primary sources used]
@@ -196,6 +208,8 @@ Run before publishing. Fix all failures first. Check each item against the actua
 - [ ] No story appears in both The Big One and The Roundup, and no source URL appears in both The Roundup and Worth Your Time
 - [ ] Roundup and Worth Your Time bullets are written in the newsletter's own words, not close paraphrases of the source's headline or subhead
 - [ ] Spot-check any aggregator/SEO-farm links actually resolve (no 404s) before publishing; swap to the primary source if one exists
+- [ ] Every Big One, Roundup, and Worth Your Time item's underlying event date, confirmed via primary source, actually falls inside the Monday-Sunday window (not just its coverage)
+- [ ] The archive-wide duplicate grep was run this edition and its result is logged in the research brief, not skipped or assumed clean
 - [ ] One joke per section maximum
 - [ ] Sponsor Slot 1 above the cold open, Sponsor Slot 2 between The Big One and The Roundup, placeholders only, never write sponsor copy
 - [ ] Sign-off is a point of view, not a summary, and doesn't repeat the last edition's closing structure
