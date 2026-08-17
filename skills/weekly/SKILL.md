@@ -28,6 +28,8 @@ The voice is Morning Brew applied to serious research: casual, conversational, w
 - All numbers need comparison context (vs last month, last year, or a legacy finance equivalent like Visa, ACH, SWIFT)
 - Every citation is an inline hyperlink embedded in natural anchor text: link the claim, not the attribution. The anchor is the most specific meaningful phrase in the sentence (an action, a company doing something, a data point). Never link "here", "this", "report", or "announced". Never use "per [Publication]" as the anchor. No floating source tags at sentence ends.
 - Bold is for mini-headers and lead-in phrases only, not mid-sentence emphasis
+- Never mirror a source's own headline or subhead closely enough that a Roundup or Worth Your Time bullet reads like a paraphrase of it. Same facts, this newsletter's own sentence structure and word choices, every time.
+- Avoid stacking two finite verbs back to back around a date or citation (e.g. "study published July 30 mystery-shopped 200 transfers"). Break it into a clause instead: "mystery-shopped 200 transfers... in a study published July 30."
 
 Wrong: "...scraped 73,000 pages per visitor. [Cloudflare](url)"
 Right: "[Cloudflare's own data](url) showed that AI crawlers scraped 73,000 pages per visitor."
@@ -45,13 +47,18 @@ Right: "[Cloudflare's own data](url) showed that AI crawlers scraped 73,000 page
 
 Primary: Artemis, DeFiLlama, Nansen, Dune Analytics, official company blogs, regulatory filings, earnings transcripts, on-chain data.
 Secondary: CoinDesk, The Block, Bloomberg, Reuters, FT, WSJ, Axios, Decrypt, Bankless, a16z crypto research, Fed publications, BIS papers, analyst reports.
-Prefer primary sources over aggregators. If only an aggregator covers a story, use it but flag it in the research brief so the editor can swap the link.
+Prefer primary sources over aggregators. If only an aggregator covers a story, use it but flag it in the research brief so the editor can swap the link. When a fact is covered by both a primary/company source (e.g. Circle's own blog) and an SEO-farm aggregator, use the primary source even if the aggregator's copy reads better: aggregator URLs (news-mill sites in particular) go dead more often.
 
 ---
 
 ## Step 1: Research
 
-Research everything before writing a word. Four workstreams:
+Research everything before writing a word. Five workstreams:
+
+Two checks apply to every candidate in every workstream below, by default, not only when asked:
+
+- **Verify the real event date via primary source.** Web search summaries blend an older event with newer follow-up coverage (a rule published one week gets analysis coverage the next, which then reads as "this week's news" in search results). Before including any story, fetch the primary source and confirm the underlying event actually happened inside the Monday-Sunday coverage window, not just that some article discussing it was published in-window.
+- **Grep every past edition, not just the 1-2 most recent.** Run `grep -ril "<term>" editions/*/draft.md editions/*/research-brief.md` for each candidate's key terms (company, protocol, ticker) before it's allowed into the brief. A story can recur as a slow-building saga across non-adjacent editions weeks apart (a licensed issuer's launch covered at "targeted for next quarter," then "on track for later this year," then "launched"), where each mention reads like fresh news in isolation and only a full-archive search catches the pattern.
 
 ### A. The Big One (highlight story)
 
@@ -75,7 +82,11 @@ Gather the week's readings for the standing metrics table: total stablecoin mark
 
 ### D. Worth Your Time (2-4 picks)
 
-Longer-form pieces published this week: research reports, essays, policy papers, podcasts. Each must be genuinely worth the reader's Saturday morning; if nothing strong exists, run fewer picks rather than recommending a weak one. For audio, note the duration.
+Longer-form pieces published this week: research reports, essays, policy papers, podcasts. Each must be genuinely worth the reader's Saturday morning; if nothing strong exists, run fewer picks rather than recommending a weak one. For audio, note the duration. None of these picks may reuse a URL already cited in The Big One or The Roundup: Worth Your Time exists to surface a different read, not to re-link a story the reader already saw above. Confirm the publish date on the source itself, not on a search snippet describing it, before counting it as this week's.
+
+### E. Duplicate check
+
+Before finalizing story selection, grep the full archive for every candidate still in play (see the two default checks above). Log the result, even when it's a clean pass. Any confirmed duplicate or near-duplicate gets cut or swapped, not run a third time with a new headline.
 
 Save everything to `editions/[YYYY-MM-DD]-weekly/research-brief.md`:
 
@@ -100,7 +111,10 @@ Date: [DATE] | Coverage: [MON] to [SUN]
 [title, author, publication, URL, why read it, duration if audio]
 
 ## Discarded items
-[one-line reason each]
+[one-line reason each, including any candidate cut for failing the date-verification or duplicate check]
+
+## Duplicate check performed
+[terms searched, folders covered, and the result — confirmed clean, or what was cut/swapped and why]
 
 ## Aggregator links to swap
 [any non-primary sources used]
@@ -156,6 +170,8 @@ SEO description: teases the angle or names 2-3 top stories in plain language, in
 4. A "**By the numbers:**" block with stats as short bullets, each attributed
 5. Kicker: one closing line with a point of view
 
+The Big One gets the same organic inline citations as the Roundup, not fewer. Every factual claim, not just the ones in "By the numbers," needs a link embedded on its key phrase the first time it's stated: the announcement itself, the headline stat, the comparison figure, any named-source detail (an executive quote, a missing-detail complication, a competitive threat). Pull the links straight from the research brief's primary/secondary sources for that story. Don't link the same claim twice in one section, and don't force a citation onto a claim that's pure analysis or opinion (the "why it matters" connective tissue doesn't need one, the facts underneath it do). If a claim in the draft has no source behind it, either find one or cut the claim; never publish an uncited factual assertion just because it sounds plausible.
+
 ```
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
@@ -168,7 +184,7 @@ Example: "Stripe [expanded stablecoin payouts to 12 new markets](url), bringing 
 
 **⏳ WORTH YOUR TIME (2-4 bullets).** Link plus one specific line on what the reader gets, duration for audio. Emoji prefixes fine here. Lighter tone allowed.
 
-**Sign-off (1-2 lines, no header).** One line back to the reader with a point of view, a question, or a tease for next week. Not a summary.
+**Sign-off (1-2 lines, no header).** One line back to the reader with a point of view, a question, or a tease for next week. Not a summary. Check the sign-offs of the last 2 editions (tail of their draft.md) before writing this one, and don't reuse the same structural formula back to back (e.g. "[Company] just proved X. Next week: watch Y" two weeks running reads as a template, not a voice).
 
 Save to `editions/[YYYY-MM-DD]-weekly/draft.md`.
 
@@ -176,11 +192,12 @@ Save to `editions/[YYYY-MM-DD]-weekly/draft.md`.
 
 ## Step 3: Quality check
 
-Run before publishing. Fix all failures first.
+Run before publishing. Fix all failures first. Check each item against the actual draft text, paragraph by paragraph and link by link, not from memory of what was intended while writing: this edition shipped with three uncited Big One paragraphs, a dead link, a near-verbatim Roundup bullet, and a Worth Your Time pick that duplicated a Roundup source, all of which the checklist below would have caught on a literal re-read.
 
 - [ ] No em dashes anywhere
 - [ ] No filler phrases from the banned list
 - [ ] Every specific number has an inline citation and comparison context
+- [ ] The Big One has organic inline citations on its factual claims, same as the Roundup, not just in "By the numbers"
 - [ ] All links embedded in natural anchor text, no floating source tags, no "per [Publication]" anchors
 - [ ] 3 subject line options, ranked, first one carries a named entity, all start with 🪙
 - [ ] SEO description present, 160 chars or under, includes a stablecoin keyword, does not repeat the subject
@@ -188,10 +205,14 @@ Run before publishing. Fix all failures first.
 - [ ] Numbers table has all six standing metrics with as-of dates
 - [ ] The Big One is 300-450 words with story-specific mini-headers and a point-of-view kicker
 - [ ] Roundup bullets are 1-2 sentences each, grouped only under earned headers, no padded groups
-- [ ] No story appears in both The Big One and The Roundup
+- [ ] No story appears in both The Big One and The Roundup, and no source URL appears in both The Roundup and Worth Your Time
+- [ ] Roundup and Worth Your Time bullets are written in the newsletter's own words, not close paraphrases of the source's headline or subhead
+- [ ] Spot-check any aggregator/SEO-farm links actually resolve (no 404s) before publishing; swap to the primary source if one exists
+- [ ] Every Big One, Roundup, and Worth Your Time item's underlying event date, confirmed via primary source, actually falls inside the Monday-Sunday window (not just its coverage)
+- [ ] The archive-wide duplicate grep was run this edition and its result is logged in the research brief, not skipped or assumed clean
 - [ ] One joke per section maximum
 - [ ] Sponsor Slot 1 above the cold open, Sponsor Slot 2 between The Big One and The Roundup, placeholders only, never write sponsor copy
-- [ ] Sign-off is a point of view, not a summary
+- [ ] Sign-off is a point of view, not a summary, and doesn't repeat the last edition's closing structure
 - [ ] Total body 900-1,400 words excluding sponsor slots and metadata
 
 Print: "Weekly done. Research: [path]. Draft: [path]. Word count: [N]."
@@ -208,6 +229,7 @@ Stablecoin Brief page ID: `32b7f3d2-e709-80bf-b981-e69ae10cc902`
 2. Title: `DRAFT: [chosen theme] ([Mon D-D, YYYY])`, for example "DRAFT: Visa builds the plumbing (Jul 13-19, 2026)". Icon: 🪙
 3. Content: the full draft including the metadata block, matching the draft exactly.
 4. Notion stores tables in its own markup. If a post-publish edit to the table is ever needed, fetch the page first and match the stored format exactly rather than resending pipe-table markdown.
+5. For any other post-publish edit, fetch the page first and match content_updates old_str to a single block at a time. Notion joins blocks with single newlines, not blank-line-separated paragraphs, so an old_str spanning multiple paragraphs with `\n\n` between them will silently fail to match (the tool can report success even when zero blocks changed). Verify by re-fetching the page after every edit rather than trusting the tool's response alone.
 
 Print: "Notion: [URL of created page]"
 
