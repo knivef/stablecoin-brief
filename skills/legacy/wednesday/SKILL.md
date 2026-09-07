@@ -1,4 +1,21 @@
 # Wednesday Signal Skill
+
+> **DEPRECATED. Not part of the current workflow.**
+>
+> This skill ran the Wednesday Signal edition when Stablecoin Brief published three issues a
+> week. On 2026-07-21 the newsletter moved to a single weekly issue, and this skill was
+> retired. The active pipeline is `skills/weekly/SKILL.md`, invoked with `/weekly`.
+>
+> Kept for reference and for the rare case of resurrecting the old cadence. Two things to
+> know before running it:
+>
+> 1. It instructs "Read CLAUDE.md in full" and expects the Monday/Wednesday/Friday-era master context,
+>    including the old sponsor slot placement and the 48-72 hour or 7-day story windows.
+>    If `CLAUDE.md` has since been rewritten for the weekly cadence, this skill will not
+>    behave as written.
+> 2. It writes to `editions/[YYYY-MM-DD]-wednesday/`, a folder naming convention no longer
+>    used by the weekly pipeline.
+
 ## Trigger
 Activated when user types: wednesday
 On activation:
