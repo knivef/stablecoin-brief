@@ -10,7 +10,7 @@ One issue per week. Format: Morning Brew tone, one deep-dive highlight story (Th
 ## On activation
 
 1. Detect today's date. The coverage window is the most recent complete Monday through Sunday. If today is mid-week and the user clearly wants the current week, use Monday through today instead.
-2. Create folder: `editions/[YYYY-MM-DD]-weekly/` (dated to the upcoming or current Tuesday, the send day).
+2. Create folder: `editions/[YYYY-MM-DD]-weekly/` (dated to the upcoming or current Monday, the send day).
 3. Begin Step 1 immediately, with no preamble and no confirmation of scope. If the user supplied a specific date range, use that instead of the default window.
 4. The pipeline runs unattended except for one gate: Step 2 presents a shortlist and waits for kvn to pick The Big One. Every other step runs straight through.
 
