@@ -5,7 +5,7 @@ description: Produce the weekly issue of Stablecoin Brief, the newsletter coveri
 
 # Stablecoin Brief: Weekly Issue
 
-One issue per week. Format: Morning Brew tone, one deep-dive highlight story (The Big One), then LegalTech Fund style bulleted news (The Roundup). This skill replaces the old monday/wednesday/friday skills.
+One issue per week. Format: Morning Brew tone, one deep-dive highlight story (The Big One), then LegalTech Fund style bulleted news (The Roundup). This skill replaces the old monday/wednesday/friday skills, archived at [knivef/stablecoin-brief-legacy](https://github.com/knivef/stablecoin-brief-legacy).
 
 ## On activation
 

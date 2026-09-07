@@ -18,6 +18,10 @@ This repo holds no newsletter content. It holds the instructions that produce it
 └── .gitignore                 # editions/ stays local
 ```
 
+The retired Monday/Wednesday/Friday skills that ran before 2026-07-21 are archived in
+[knivef/stablecoin-brief-legacy](https://github.com/knivef/stablecoin-brief-legacy), along
+with the M/W/F-era `CLAUDE.md` they depend on. They are kept runnable but unmaintained.
+
 `CLAUDE.md` loads automatically in every session. It sets the standing rules: no em dashes, no filler phrases, every number carries comparison context, every claim carries an inline citation, and every edition ends with a point of view rather than a summary.
 
 `skills/weekly/SKILL.md` is the operational spec. It only loads when the skill triggers.

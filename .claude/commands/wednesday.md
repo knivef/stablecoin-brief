@@ -1,1 +1,0 @@
-Read and execute the skill at skills/legacy/wednesday/SKILL.md exactly as instructed.
