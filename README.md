@@ -2,7 +2,7 @@
 
 Skill definitions for **Stablecoin Brief**, a weekly newsletter covering stablecoins and payments for financially literate, crypto-aware readers.
 
-This repo holds no newsletter content. It holds the instructions that produce it. Clone it, open Claude Code in the folder, type `/weekly`, and a full issue gets researched, written, quality checked, and published to Notion.
+This repo holds no newsletter content. It holds the instructions that produce it. Clone it, open Claude Code in the folder, type `/weekly`, and a full issue gets researched, shortlisted for your pick, written, quality checked, and published to Notion.
 
 ## Repo layout
 
@@ -24,7 +24,7 @@ This repo holds no newsletter content. It holds the instructions that produce it
 
 ## How the skill works
 
-The skill fires on `/weekly` or on natural phrasing like "run the weekly", "write this week's issue", or "newsletter time". Once triggered it runs four steps end to end without asking for confirmation between them.
+The skill fires on `/weekly` or on natural phrasing like "run the weekly", "write this week's issue", or "newsletter time". Once triggered it runs five steps end to end. There is exactly one stop: Step 2 presents a shortlist and waits for you to pick The Big One. Everything else runs without confirmation.
 
 ### Step 0: setup
 
@@ -32,18 +32,31 @@ Detects today's date, sets the coverage window to the most recent complete Monda
 
 ### Step 1: research
 
-Four parallel workstreams, all completed before a word gets written:
+Five workstreams, all completed before a word gets written:
 
 | Workstream | Output |
 | --- | --- |
-| **A. The Big One** | One highlight story, chosen for a non-obvious angle, a reframing data point, a named character, and stakes beyond crypto. Gathers the primary source, 3+ secondary sources, THE NUMBER, THE CHARACTER, THE COMPLICATION, THE STAKES, and the unique position. |
+| **A. The Big One** | A ranked shortlist of 3 to 4 highlight candidates, judged on a non-obvious angle, a reframing data point, a named character, and stakes beyond crypto. Each gets the angle, the headline number, a primary source, and a caveat. The full deep dive (3+ secondary sources, THE NUMBER, THE CHARACTER, THE COMPLICATION, THE STAKES, the unique position) runs only on the story you pick. |
 | **B. The Roundup** | 8 to 12 distinct news items, ranked by newsworthiness and grouped into regulation, infrastructure, adoption, or money moves. |
 | **C. The Numbers** | Six standing metrics: total stablecoin market cap, USDT supply, USDC supply, BTC, Nasdaq, CRCL. Each with an as-of date and source. |
 | **D. Worth Your Time** | 2 to 4 longer-form reads published that week. |
+| **E. Duplicate check** | An archive-wide grep for every candidate still in play, logged in the brief even when it comes back clean. |
 
-Everything lands in `research-brief.md`, including discarded items and any aggregator links flagged for swapping to primary sources.
+Everything lands in `research-brief.md`, including the full ranked candidate list, discarded items, and any aggregator links flagged for swapping to primary sources.
 
-### Step 2: draft
+Two checks run on every candidate by default, not on request: the real event date gets confirmed against a primary source rather than a search snippet, and the whole `editions/` archive gets grepped for the candidate's key terms so a slow-building saga doesn't run twice under a fresh headline.
+
+### Step 2: shortlist and pick
+
+The pipeline's only stop. It presents:
+
+- **3 to 4 ranked Big One candidates**, about three lines each: the angle, the strongest data point, the caveat. The top-ranked one is marked as the recommendation.
+- **The Roundup lineup**, one line per item under its group header, so items can be vetoed, added, or promoted to The Big One.
+- **Judgment calls worth surfacing**, when there are any, like a company that ran as The Big One in a recent edition.
+
+Then it waits. "You pick" or "go" runs the top-ranked candidate and notes in the brief that it ran as the default. Promoting a Roundup item triggers the deep dive on it and backfills its slot. Rejecting the whole shortlist sends it back to research rather than forcing a weak story through. Roundup vetoes made here are final.
+
+### Step 3: draft
 
 Writes the publish-ready issue to `draft.md` in a fixed structure:
 
@@ -57,11 +70,11 @@ Writes the publish-ready issue to `draft.md` in a fixed structure:
 
 Two sponsor placeholders sit at fixed positions: Slot 1 above the cold open, Slot 2 between The Big One and The Roundup. The skill never writes sponsor copy, only placeholders.
 
-### Step 3: quality check
+### Step 4: quality check
 
-A 16-item checklist runs against the draft and every failure gets fixed before publishing. It covers em dashes, banned filler phrases, citation anchor quality, section word counts, subject line format, sponsor slot placement, joke density (one per section maximum), and total body length of 900 to 1,400 words.
+A 21-item checklist runs against the draft and every failure gets fixed before publishing. It covers em dashes, banned filler phrases, citation anchor quality, section word counts, subject line format, sponsor slot placement, joke density (one per section maximum), in-window event dates, the archive duplicate grep, whether the draft reflects the story you actually picked, and total body length of 900 to 1,400 words.
 
-### Step 4: publish
+### Step 5: publish
 
 Creates a new Notion page under the Stablecoin Brief parent page, titled `DRAFT: [theme] ([Mon D-D, YYYY])` with a 🪙 icon, containing the full draft. Skipped if the user asked for a local draft or Notion is unavailable.
 

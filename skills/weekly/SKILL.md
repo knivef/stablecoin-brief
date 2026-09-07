@@ -1,6 +1,6 @@
 ---
 name: weekly
-description: Produce the weekly issue of Stablecoin Brief, the newsletter covering stablecoins and payments. Use this whenever kvn types "weekly", asks to "run the weekly", "write this week's issue", "create the Stablecoin Brief", "draft the newsletter", or mentions producing, drafting, or publishing any Stablecoin Brief issue, even casually ("let's do this week's brief", "newsletter time"). The skill runs the full pipeline, research the past week, write the issue in the weekly format (one deep-dive highlight story plus a bulleted roundup), quality check, publish to Notion. Do not write a Stablecoin Brief issue without this skill.
+description: Produce the weekly issue of Stablecoin Brief, the newsletter covering stablecoins and payments. Use this whenever kvn types "weekly", asks to "run the weekly", "write this week's issue", "create the Stablecoin Brief", "draft the newsletter", or mentions producing, drafting, or publishing any Stablecoin Brief issue, even casually ("let's do this week's brief", "newsletter time"). The skill runs the full pipeline, research the past week, present a ranked shortlist for kvn to pick the highlight story, write the issue in the weekly format (one deep-dive highlight story plus a bulleted roundup), quality check, publish to Notion. Do not write a Stablecoin Brief issue without this skill.
 ---
 
 # Stablecoin Brief: Weekly Issue
@@ -11,7 +11,8 @@ One issue per week. Format: Morning Brew tone, one deep-dive highlight story (Th
 
 1. Detect today's date. The coverage window is the most recent complete Monday through Sunday. If today is mid-week and the user clearly wants the current week, use Monday through today instead.
 2. Create folder: `editions/[YYYY-MM-DD]-weekly/` (dated to the upcoming or current Tuesday, the send day).
-3. Begin Step 1 immediately. No prompts, no confirmations. If the user supplied a specific date range, use that instead of the default window.
+3. Begin Step 1 immediately, with no preamble and no confirmation of scope. If the user supplied a specific date range, use that instead of the default window.
+4. The pipeline runs unattended except for one gate: Step 2 presents a shortlist and waits for kvn to pick The Big One. Every other step runs straight through.
 
 ## Audience and voice
 
@@ -70,7 +71,11 @@ Search the coverage window across trusted sources. Evaluate candidates against:
 - Stakes that matter beyond crypto-native audiences
 - A unique position: something this piece can say that other coverage has not said this week
 
-Pick the single strongest story. Do not surface options or ask for input. If two are genuinely equal, pick the one with the stronger data point. For the chosen story gather: the primary source, at least 3 secondary sources, THE NUMBER (with comparison context), THE CHARACTER (named, with the decision they made or face), THE COMPLICATION (what makes the obvious take incomplete), THE STAKES (who wins, who sweats, named), and the UNIQUE POSITION in one sentence. If the unique position is unclear after real research, note "UNIQUE POSITION UNCLEAR" and proceed with the strongest angle.
+Rank every candidate that clears the bar and carry the strongest 3-4 forward as the shortlist for Step 2. Do not pick one and start writing: the pick is kvn's.
+
+Research each shortlisted candidate far enough to make the choice real, but no further. For each, get: the angle in one line, the headline data point, the primary source, and any caveat the pick should account for (thin sourcing, a company that ran recently, an event date that only just clears the window). Both default checks above apply to every shortlisted candidate before it reaches the shortlist, so kvn is never choosing a story that turns out to be out of window or already covered.
+
+The full deep dive happens only on the story kvn picks. After the pick, gather for that story: the primary source, at least 3 secondary sources, THE NUMBER (with comparison context), THE CHARACTER (named, with the decision they made or face), THE COMPLICATION (what makes the obvious take incomplete), THE STAKES (who wins, who sweats, named), and the UNIQUE POSITION in one sentence. If the unique position is unclear after real research, note "UNIQUE POSITION UNCLEAR" and proceed with the strongest angle.
 
 ### B. The Roundup (8-12 items)
 
@@ -95,7 +100,10 @@ Save everything to `editions/[YYYY-MM-DD]-weekly/research-brief.md`:
 Date: [DATE] | Coverage: [MON] to [SUN]
 
 ## The Big One
-### Story selected and why
+### Candidates shortlisted (ranked)
+[for each: the angle in one line / the headline data point / primary source URL / the caveat]
+### Selected
+[which candidate, whether kvn picked it or it ran as the default, and why]
 ### Primary source
 ### Secondary sources
 ### The Number / The Character / The Complication / The Stakes
@@ -114,17 +122,41 @@ Date: [DATE] | Coverage: [MON] to [SUN]
 [one-line reason each, including any candidate cut for failing the date-verification or duplicate check]
 
 ## Duplicate check performed
-[terms searched, folders covered, and the result — confirmed clean, or what was cut/swapped and why]
+[terms searched, folders covered, and the result: confirmed clean, or what was cut/swapped and why]
 
 ## Aggregator links to swap
 [any non-primary sources used]
 ```
 
-Proceed immediately to Step 2.
+Save the brief with the full ranked candidate list before presenting the shortlist. Then go to Step 2.
 
 ---
 
-## Step 2: Write the draft
+## Step 2: Shortlist and pick
+
+This is the pipeline's only stop. Present the shortlist in chat and wait. Do not write a draft before kvn picks.
+
+Present, in this order:
+
+1. **The Big One candidates, 3-4, ranked.** For each: a one-line statement of the angle (not the headline the source used), the strongest data point, and the caveat. Mark the top-ranked one as the recommendation and say in one sentence why it leads. Keep each candidate to about three lines; this is a menu, not a briefing.
+2. **The Roundup lineup**, compact, one line per item under its group header. kvn can veto items, add one, or promote one to The Big One from here.
+3. **Judgment calls worth surfacing**, only when there are any: a company or theme that ran as The Big One in a recent edition, a candidate whose sourcing is thin, a near-duplicate that was handled rather than cut, two candidates that are really the same story.
+
+Then stop and wait for the pick.
+
+Handling the response:
+
+- **kvn picks a candidate:** run the full deep dive on it (see Step 1A), record the selection in the brief, and proceed to Step 3.
+- **kvn picks a Roundup item:** promote it, run the full deep dive on it, and backfill its Roundup slot from the discarded pile or fresh research. Roundup drops to as few as 8 items rather than running a padded one.
+- **kvn says "you pick", "go", or gives no steer:** use the top-ranked candidate and proceed. Note in the brief that it ran as the default rather than as an explicit pick.
+- **kvn rejects the whole shortlist:** go back to Step 1 workstream A for more candidates. Do not force a weak story through because the shortlist is spent.
+- **kvn picks a story and adds an angle:** the angle is the instruction. Research it, and if the reporting does not support it, say so plainly before drafting rather than writing around the gap.
+
+Any Roundup edits kvn makes here are final. Do not reinstate a vetoed item at draft time.
+
+---
+
+## Step 3: Write the draft
 
 Write the complete publish-ready issue. Use this exact structure:
 
@@ -190,7 +222,7 @@ Save to `editions/[YYYY-MM-DD]-weekly/draft.md`.
 
 ---
 
-## Step 3: Quality check
+## Step 4: Quality check
 
 Run before publishing. Fix all failures first. Check each item against the actual draft text, paragraph by paragraph and link by link, not from memory of what was intended while writing: this edition shipped with three uncited Big One paragraphs, a dead link, a near-verbatim Roundup bullet, and a Worth Your Time pick that duplicated a Roundup source, all of which the checklist below would have caught on a literal re-read.
 
@@ -210,6 +242,7 @@ Run before publishing. Fix all failures first. Check each item against the actua
 - [ ] Spot-check any aggregator/SEO-farm links actually resolve (no 404s) before publishing; swap to the primary source if one exists
 - [ ] Every Big One, Roundup, and Worth Your Time item's underlying event date, confirmed via primary source, actually falls inside the Monday-Sunday window (not just its coverage)
 - [ ] The archive-wide duplicate grep was run this edition and its result is logged in the research brief, not skipped or assumed clean
+- [ ] The Big One is the story kvn picked at Step 2, any Roundup items kvn vetoed are gone, and the brief records the shortlist alongside the selection
 - [ ] One joke per section maximum
 - [ ] Sponsor Slot 1 above the cold open, Sponsor Slot 2 between The Big One and The Roundup, placeholders only, never write sponsor copy
 - [ ] Sign-off is a point of view, not a summary, and doesn't repeat the last edition's closing structure
@@ -219,9 +252,9 @@ Print: "Weekly done. Research: [path]. Draft: [path]. Word count: [N]."
 
 ---
 
-## Step 4: Publish to Notion
+## Step 5: Publish to Notion
 
-Run after Step 3 passes. No confirmation needed. Skip this step only if the user asked for a local draft or Notion is unavailable (note it and finish).
+Run after Step 4 passes. No confirmation needed. Skip this step only if the user asked for a local draft or Notion is unavailable (note it and finish).
 
 Stablecoin Brief page ID: `32b7f3d2-e709-80bf-b981-e69ae10cc902`
 
