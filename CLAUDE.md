@@ -1,5 +1,7 @@
-# Stablecoin Brief — Master Context
-Newsletter publishing Monday, Wednesday, Friday.
+# Stablecoin Brief: Master Context
+Weekly newsletter, published Mondays.
+Each issue covers the most recent complete Monday
+through Sunday.
 Covers the stablecoin industry for financially literate,
 crypto-aware readers.
 ## Audience
@@ -39,8 +41,11 @@ a joke. Never sacrifice readability for thoroughness.
 - No definition openers
 - No passive voice where avoidable
 - All numbers need comparison context
-- All claims need inline citations (publication name,
-  hyperlinked)
+- All claims need inline citations, hyperlinked on the most
+  specific meaningful phrase in the sentence. Never anchor on
+  "here", "this", "report", "announced", or a bare
+  publication name, and never float a source tag at the end
+  of a sentence
 - End every edition with a point of view, not a summary
 ## Tone Calibration
 WRONG: "Stablecoins are experiencing significant regulatory
@@ -68,13 +73,14 @@ did in 2019."
 6. Technology and protocol: mechanisms, de-peg events,
    chain-level shifts
 ## Story Selection Criteria
-When auto-picking a story, prioritize:
+When ranking candidates for the highlight story, prioritize:
 - A non-obvious angle most coverage has missed
 - A strong data point that reframes the narrative
 - A real character or company whose decision drives the story
 - Stakes that matter beyond crypto-native audiences
-- Something that happened or broke in the past 7 days
-  (Monday) or 48-72 hours (Wednesday, Friday)
+- Something that happened or broke inside the coverage week,
+  confirmed against the primary source rather than the date
+  on a piece of follow-up coverage
 ## Trusted Sources
 Primary: Artemis, DeFiLlama, Nansen, Dune Analytics,
 official company blogs, regulatory filings, earnings
@@ -92,8 +98,6 @@ in exactly this format:
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
-Slot 1 sits between the headline and the hook.
-Slot 2 sits between "What Happened" and "Why It
-Actually Matters" (Monday) or between the 3rd and
-4th snippet (Wednesday and Friday).
+Slot 1 sits at the top of the email, above the cold open.
+Slot 2 sits between The Big One and The Roundup.
 Never write sponsor copy. Placeholders only.
