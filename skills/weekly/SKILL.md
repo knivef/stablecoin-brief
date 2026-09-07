@@ -59,6 +59,8 @@ Research everything before writing a word. Five workstreams:
 Two checks apply to every candidate in every workstream below, by default, not only when asked:
 
 - **Verify the real event date via primary source.** Web search summaries blend an older event with newer follow-up coverage (a rule published one week gets analysis coverage the next, which then reads as "this week's news" in search results). Before including any story, fetch the primary source and confirm the underlying event actually happened inside the Monday-Sunday coverage window, not just that some article discussing it was published in-window.
+  - **When secondary sources disagree on the date, the primary document's own stamp wins.** Outlets routinely publish on different days and each writes "this week," so a single event can appear as three or four different dates across coverage. Do not average them or pick the most common one. Open the underlying document and use the date on it.
+  - **Regulatory primaries are usually PDFs, and WebFetch cannot parse them.** A decision letter, rule text or working paper often comes back as an unreadable binary stream. WebFetch still saves the file locally and names the path in its result: extract it with `pdftotext -layout <path> -` or pypdf, then read it. This is what makes a story quotable from the source document rather than from someone's summary of it, and regulatory documents carry the exact figures, conditions and deadlines that coverage rounds off or omits.
 - **Grep every past edition, not just the 1-2 most recent.** Run `grep -ril "<term>" editions/*/draft.md editions/*/research-brief.md` for each candidate's key terms (company, protocol, ticker) before it's allowed into the brief. A story can recur as a slow-building saga across non-adjacent editions weeks apart (a licensed issuer's launch covered at "targeted for next quarter," then "on track for later this year," then "launched"), where each mention reads like fresh news in isolation and only a full-archive search catches the pattern.
 
 ### A. The Big One (highlight story)
@@ -239,10 +241,13 @@ Run before publishing. Fix all failures first. Check each item against the actua
 - [ ] Roundup bullets are 1-2 sentences each, grouped only under earned headers, no padded groups
 - [ ] No story appears in both The Big One and The Roundup, and no source URL appears in both The Roundup and Worth Your Time
 - [ ] Roundup and Worth Your Time bullets are written in the newsletter's own words, not close paraphrases of the source's headline or subhead
-- [ ] Spot-check any aggregator/SEO-farm links actually resolve (no 404s) before publishing; swap to the primary source if one exists
+- [ ] Spot-check any aggregator/SEO-farm links actually resolve before publishing; swap to the primary source if one exists. Only 404 and 410 mean dead. Many publishers bot-filter `curl` and return 403 or 429 on pages that load perfectly in a browser, so confirm with WebFetch before calling a link broken. Never downgrade a working primary source to a weaker one on the strength of a 403
 - [ ] Every Big One, Roundup, and Worth Your Time item's underlying event date, confirmed via primary source, actually falls inside the Monday-Sunday window (not just its coverage)
 - [ ] The archive-wide duplicate grep was run this edition and its result is logged in the research brief, not skipped or assumed clean
 - [ ] The Big One is the story kvn picked at Step 2, any Roundup items kvn vetoed are gone, and the brief records the shortlist alongside the selection
+- [ ] Every comparison and characterization traces to a source, not to memory. Anything asserting how long something took, how it compares to a precedent, or what a company did before is a factual claim and needs a source behind it, whether or not a number is attached. If it was written from recall mid-draft, verify it or cut it
+- [ ] Re-do every number derived rather than quoted: multiples, percentages, YTD moves, day counts, and how many figures a sum has. State the direction correctly too, since a comparison can be arithmetically right and still imply the opposite of what happened
+- [ ] Every named weekday matches its date on the calendar, and every "last month" or "in July" matches the actual date
 - [ ] One joke per section maximum
 - [ ] Sponsor Slot 1 above the cold open, Sponsor Slot 2 between The Big One and The Roundup, placeholders only, never write sponsor copy
 - [ ] Sign-off is a point of view, not a summary, and doesn't repeat the last edition's closing structure

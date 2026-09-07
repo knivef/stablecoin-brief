@@ -76,7 +76,9 @@ Two sponsor placeholders sit at fixed positions: Slot 1 above the cold open, Slo
 
 ### Step 4: quality check
 
-A 21-item checklist runs against the draft and every failure gets fixed before publishing. It covers em dashes, banned filler phrases, citation anchor quality, section word counts, subject line format, sponsor slot placement, joke density (one per section maximum), in-window event dates, the archive duplicate grep, whether the draft reflects the story you actually picked, and total body length of 900 to 1,400 words.
+A 24-item checklist runs against the draft and every failure gets fixed before publishing. It covers em dashes, banned filler phrases, citation anchor quality, section word counts, subject line format, sponsor slot placement, joke density (one per section maximum), in-window event dates, the archive duplicate grep, whether the draft reflects the story you actually picked, and total body length of 900 to 1,400 words.
+
+Three of those items exist because formatting checks alone do not catch being wrong. They require that every comparison traces to a source rather than to recall, that self-derived numbers get recomputed and stated in the right direction, and that named weekdays match their dates.
 
 ### Step 5: publish
 
