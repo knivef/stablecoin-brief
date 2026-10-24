@@ -1,0 +1,101 @@
+{
+  "_about": "Companies whose public job boards scripts/jobs.py reads every week. Add a company once its board is confirmed to belong to it (slugs collide: ashby/circle is Circle.so, not Circle Internet Group). Sector values must match the Sector options in scripts/setup_notion.py.",
+  "companies": [
+    {"name": "Circle", "sector": "Stablecoin issuer", "ats": "workday", "host": "circle.wd1.myworkdayjobs.com", "tenant": "circle", "site": "Circle"},
+    {"name": "Paxos", "sector": "Stablecoin issuer", "ats": "ashby", "slug": "paxos"},
+    {"name": "Ripple", "sector": "Stablecoin issuer", "ats": "greenhouse", "slug": "ripple"},
+    {"name": "Gemini", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "gemini"},
+
+    {"name": "BVNK", "sector": "Stablecoin infra", "ats": "greenhouse", "slug": "bvnk"},
+    {"name": "Bastion", "sector": "Stablecoin infra", "ats": "ashby", "slug": "bastion"},
+    {"name": "Brale", "sector": "Stablecoin infra", "ats": "ashby", "slug": "brale"},
+    {"name": "Codex", "sector": "Stablecoin infra", "ats": "ashby", "slug": "codex"},
+    {"name": "Squads", "sector": "Stablecoin infra", "ats": "ashby", "slug": "squads"},
+
+    {"name": "Tempo", "sector": "Chains & protocols", "ats": "ashby", "slug": "tempo-xyz"},
+    {"name": "Plasma", "sector": "Chains & protocols", "ats": "ashby", "slug": "plasma"},
+    {"name": "Stellar Development Foundation", "sector": "Chains & protocols", "ats": "ashby", "slug": "stellar"},
+    {"name": "Polygon Labs", "sector": "Chains & protocols", "ats": "ashby", "slug": "polygon-labs"},
+    {"name": "Ava Labs", "sector": "Chains & protocols", "ats": "ashby", "slug": "ava-labs"},
+    {"name": "LayerZero Labs", "sector": "Chains & protocols", "ats": "greenhouse", "slug": "layerzerolabs"},
+    {"name": "Alchemy", "sector": "Chains & protocols", "ats": "ashby", "slug": "alchemy"},
+
+    {"name": "Stripe", "sector": "Payments & PSPs", "ats": "greenhouse", "slug": "stripe"},
+    {"name": "PayPal", "sector": "Payments & PSPs", "ats": "workday", "host": "paypal.wd1.myworkdayjobs.com", "tenant": "paypal", "site": "jobs"},
+    {"name": "Adyen", "sector": "Payments & PSPs", "ats": "greenhouse", "slug": "adyen"},
+    {"name": "Block", "sector": "Payments & PSPs", "ats": "greenhouse", "slug": "block"},
+    {"name": "Toast", "sector": "Payments & PSPs", "ats": "greenhouse", "slug": "toast"},
+    {"name": "Affirm", "sector": "Payments & PSPs", "ats": "greenhouse", "slug": "affirm"},
+    {"name": "Finix", "sector": "Payments & PSPs", "ats": "lever", "slug": "finix"},
+    {"name": "Paddle", "sector": "Payments & PSPs", "ats": "ashby", "slug": "paddle"},
+    {"name": "Mollie", "sector": "Payments & PSPs", "ats": "ashby", "slug": "mollie"},
+    {"name": "Spreedly", "sector": "Payments & PSPs", "ats": "lever", "slug": "spreedly"},
+    {"name": "Coinflow", "sector": "Payments & PSPs", "ats": "ashby", "slug": "coinflow"},
+    {"name": "Mesh", "sector": "Payments & PSPs", "ats": "ashby", "slug": "mesh"},
+    {"name": "Lightspark", "sector": "Payments & PSPs", "ats": "ashby", "slug": "lightspark"},
+
+    {"name": "Visa", "sector": "Cards & issuing", "ats": "workday", "host": "visa.wd5.myworkdayjobs.com", "tenant": "visa", "site": "Visa"},
+    {"name": "Mastercard", "sector": "Cards & issuing", "ats": "workday", "host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CorporateCareers"},
+    {"name": "Rain", "sector": "Cards & issuing", "ats": "ashby", "slug": "rain"},
+    {"name": "Lithic", "sector": "Cards & issuing", "ats": "greenhouse", "slug": "lithic"},
+    {"name": "Highnote", "sector": "Cards & issuing", "ats": "greenhouse", "slug": "highnote"},
+
+    {"name": "Wise", "sector": "Cross-border & remittance", "ats": "smartrecruiters", "slug": "wise"},
+    {"name": "Remitly", "sector": "Cross-border & remittance", "ats": "workday", "host": "remitly.wd5.myworkdayjobs.com", "tenant": "remitly", "site": "Remitly_Careers"},
+    {"name": "Airwallex", "sector": "Cross-border & remittance", "ats": "ashby", "slug": "airwallex"},
+    {"name": "Payoneer", "sector": "Cross-border & remittance", "ats": "greenhouse", "slug": "payoneer"},
+    {"name": "Thunes", "sector": "Cross-border & remittance", "ats": "greenhouse", "slug": "thunes"},
+    {"name": "Nium", "sector": "Cross-border & remittance", "ats": "lever", "slug": "nium"},
+    {"name": "dLocal", "sector": "Cross-border & remittance", "ats": "lever", "slug": "dlocal"},
+    {"name": "Airtm", "sector": "Cross-border & remittance", "ats": "lever", "slug": "airtm"},
+
+    {"name": "MoonPay", "sector": "On/off ramps", "ats": "lever", "slug": "moonpay"},
+
+    {"name": "Mercury", "sector": "Banking & BaaS", "ats": "greenhouse", "slug": "mercury"},
+    {"name": "Column", "sector": "Banking & BaaS", "ats": "ashby", "slug": "column"},
+    {"name": "Unit", "sector": "Banking & BaaS", "ats": "ashby", "slug": "unit"},
+    {"name": "Rho", "sector": "Banking & BaaS", "ats": "ashby", "slug": "rho"},
+    {"name": "Nubank", "sector": "Banking & BaaS", "ats": "ashby", "slug": "nubank"},
+
+    {"name": "Ramp", "sector": "B2B & spend", "ats": "ashby", "slug": "ramp"},
+    {"name": "Brex", "sector": "B2B & spend", "ats": "greenhouse", "slug": "brex"},
+    {"name": "Modern Treasury", "sector": "B2B & spend", "ats": "ashby", "slug": "moderntreasury"},
+
+    {"name": "Plaid", "sector": "Open banking", "ats": "ashby", "slug": "plaid"},
+    {"name": "TrueLayer", "sector": "Open banking", "ats": "ashby", "slug": "truelayer"},
+    {"name": "GoCardless", "sector": "Open banking", "ats": "greenhouse", "slug": "gocardless"},
+
+    {"name": "Fiserv", "sector": "Core processing", "ats": "workday", "host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "EXT"},
+    {"name": "FIS", "sector": "Core processing", "ats": "workday", "host": "fis.wd5.myworkdayjobs.com", "tenant": "fis", "site": "SearchJobs"},
+
+    {"name": "Coinbase", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "coinbase"},
+    {"name": "Kraken", "sector": "Exchanges & brokers", "ats": "ashby", "slug": "kraken.com"},
+    {"name": "Binance", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "binance"},
+    {"name": "OKX", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "okx"},
+    {"name": "Bybit", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "bybit"},
+    {"name": "Crypto.com", "sector": "Exchanges & brokers", "ats": "lever", "slug": "crypto"},
+    {"name": "Bitpanda", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "bitpanda"},
+    {"name": "Coins.ph", "sector": "Exchanges & brokers", "ats": "lever", "slug": "coins"},
+    {"name": "Robinhood", "sector": "Exchanges & brokers", "ats": "greenhouse", "slug": "robinhood"},
+
+    {"name": "Anchorage Digital", "sector": "Custody & wallets", "ats": "lever", "slug": "anchorage"},
+    {"name": "Fireblocks", "sector": "Custody & wallets", "ats": "greenhouse", "slug": "fireblocks"},
+    {"name": "BitGo", "sector": "Custody & wallets", "ats": "greenhouse", "slug": "bitgo"},
+    {"name": "Copper", "sector": "Custody & wallets", "ats": "greenhouse", "slug": "copperco"},
+    {"name": "Turnkey", "sector": "Custody & wallets", "ats": "ashby", "slug": "turnkey"},
+    {"name": "Phantom", "sector": "Custody & wallets", "ats": "ashby", "slug": "phantom"},
+
+    {"name": "Ondo Finance", "sector": "Tokenization & RWA", "ats": "greenhouse", "slug": "ondofinance"},
+    {"name": "Securitize", "sector": "Tokenization & RWA", "ats": "greenhouse", "slug": "securitize"},
+    {"name": "Superstate", "sector": "Tokenization & RWA", "ats": "lever", "slug": "superstate"},
+
+    {"name": "TRM Labs", "sector": "Compliance & risk", "ats": "ashby", "slug": "trm-labs"},
+    {"name": "Elliptic", "sector": "Compliance & risk", "ats": "ashby", "slug": "elliptic"},
+
+    {"name": "Morpho", "sector": "DeFi", "ats": "ashby", "slug": "morpho"}
+  ],
+  "no_public_board": [
+    "Tether", "Checkout.com", "Revolut", "Klarna", "Marqeta", "Chainalysis", "Zero Hash", "Agora", "M0",
+    "Bitso", "Yellow Card", "Flutterwave", "Transak", "Western Union", "MoneyGram"
+  ]
+}

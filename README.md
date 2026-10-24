@@ -1,101 +1,93 @@
 # Stablecoin Brief
 
-Skill definitions for **Stablecoin Brief**, a weekly newsletter covering stablecoins and payments for financially literate, crypto-aware readers.
+Skill definitions and tooling for **Stablecoin Brief**, a weekly newsletter that tracks the money, people and licenses moving through stablecoins and payments.
 
-This repo holds no newsletter content. It holds the instructions that produce it. Clone it, open Claude Code in the folder, type `/weekly`, and a full issue gets researched, shortlisted for your pick, written, quality checked, and published to Notion.
+This repo holds no newsletter content. It holds the instructions and scripts that produce it. Clone it, open Claude Code in the folder, type `/weekly`, and a full issue gets researched, reviewed by you, written, quality checked, logged to two Notion trackers, and published to Notion as a draft.
+
+## The format
+
+Every news item is one sentence of 20 words or fewer, grouped by category and led by the company name:
+
+- 💰 Fundraising, tiered by size: $25M+, $5M to $25M, under $5M, undisclosed
+- 🤝 M&A
+- 🔄 People moves
+- ⚖️ Regulation & licensing
+- 🚀 Launches
+- 🔗 Partnerships
+- 📉 Layoffs & shutdowns
+- 💼 Who's hiring: 5 to 8 featured roles
+
+An intro and a six-row numbers table sit on top; a one-line sign-off closes it. The model is The LegalTech Fund's [Funds Flow](https://www.legaltech.com/post/funds-flow-october-2026) and [The Docket](https://www.legaltech.com/post/the-docket-october-2026). Coverage is stablecoins plus all of payments, with or without a crypto angle.
+
+The newsletter is the curated cut. Two Notion databases under the Stablecoin Brief page are the complete record:
+
+| Tracker | What goes in | Tags |
+| --- | --- | --- |
+| 📰 **News Tracker** | Every item researched each week, in the edition or not. Modeled on [DefiLlama Raises](https://defillama.com/raises). | Week, Type, Round, Amount ($M), Valuation ($M), Lead investors, Other investors, Sector, Region, Chains, Person, Role, Counterparty, In edition |
+| 💼 **Jobs Tracker** | Every role first posted that week at the companies in `data/job-boards.json` | Company, Sector, Function, Seniority, Region, Work mode, Employment type, Posted, Week, Status (Open/Closed), Source, Featured |
+
+The Notion API can't create views, so add these by hand once: on the News Tracker, a **Raises** table filtered to Type = Fundraise and sorted by Date, and a board grouped by **Week**; on the Jobs Tracker, a table filtered to Status = Open and a board grouped by **Function**.
 
 ## Repo layout
 
 ```
 .
-├── CLAUDE.md                  # Master context: audience, voice, style rules, pillars, sources
+├── CLAUDE.md                  # Master context: audience, format, voice, style rules, scope, sources
 ├── skills/
 │   └── weekly/
-│       └── SKILL.md           # The weekly issue pipeline
+│       └── SKILL.md           # The weekly pipeline
+├── scripts/
+│   ├── notion_api.py          # Shared Notion client (token from NOTION_TOKEN or the Notion MCP config)
+│   ├── setup_notion.py        # One-time: creates both trackers, writes data/notion.json
+│   ├── news.py                # check / render / lint / push for the week's news items
+│   └── jobs.py                # fetch / push / feature for the week's job openings
+├── data/
+│   ├── notion.json            # Tracker database and data source IDs
+│   └── job-boards.json        # Companies whose public job boards get read every week
 ├── .claude/
 │   └── commands/
 │       └── weekly.md          # /weekly slash command, invokes the skill
 └── .gitignore                 # editions/ stays local
 ```
 
-The retired Monday/Wednesday/Friday skills that ran before 2026-07-21 are archived in
-[knivef/stablecoin-brief-legacy](https://github.com/knivef/stablecoin-brief-legacy), along
-with the M/W/F-era `CLAUDE.md` they depend on. They are kept runnable but unmaintained.
-
-`CLAUDE.md` loads automatically in every session. It sets the standing rules: no em dashes, no filler phrases, every number carries comparison context, every claim carries an inline citation, and every edition ends with a point of view rather than a summary.
-
-`skills/weekly/SKILL.md` is the operational spec. It only loads when the skill triggers.
+The scripts need only the system `python3` (3.9+, standard library). The previous Big One deep-dive format is in git history at commit `19015a8`. The Monday/Wednesday/Friday skills that ran before 2026-07-21 are archived in [knivef/stablecoin-brief-legacy](https://github.com/knivef/stablecoin-brief-legacy) with the `CLAUDE.md` they depend on.
 
 ## How the skill works
 
-The skill fires on `/weekly` or on natural phrasing like "run the weekly", "write this week's issue", or "newsletter time". Once triggered it runs five steps end to end. There is exactly one stop: Step 2 presents a shortlist and waits for you to pick The Big One. Everything else runs without confirmation.
-
-### Step 0: setup
-
-Detects today's date, sets the coverage window to the most recent complete Monday through Sunday, and creates `editions/[YYYY-MM-DD]-weekly/` dated to the send day. A user-supplied date range overrides the default window.
+The skill fires on `/weekly` or on natural phrasing like "run the weekly" or "newsletter time". It runs five steps end to end, with one stop at Step 2 for your review.
 
 ### Step 1: research
 
-Five workstreams, all completed before a word gets written:
+Sweeps the most recent Monday-to-Sunday window for fundraises, M&A, people moves, regulation and licensing, launches and partnerships. It aims for every disclosed round in scope, not a sample. Every item goes into `editions/[date]-weekly/news.json` with its 20-word summary and its tags.
 
-| Workstream | Output |
-| --- | --- |
-| **A. The Big One** | A ranked shortlist of 3 to 4 highlight candidates, judged on a non-obvious angle, a reframing data point, a named character, and stakes beyond crypto. Each gets the angle, the headline number, a primary source, and a caveat. The full deep dive (3+ secondary sources, THE NUMBER, THE CHARACTER, THE COMPLICATION, THE STAKES, the unique position) runs only on the story you pick. |
-| **B. The Roundup** | 8 to 12 distinct news items, ranked by newsworthiness and grouped into regulation, infrastructure, adoption, or money moves. |
-| **C. The Numbers** | Six standing metrics: total stablecoin market cap, USDT supply, USDC supply, BTC, Nasdaq, CRCL. Each with an as-of date and source. |
-| **D. Worth Your Time** | 2 to 4 longer-form reads published that week. |
-| **E. Duplicate check** | An archive-wide grep for every candidate still in play, logged in the brief even when it comes back clean. |
+Jobs come from the public job-board APIs (Greenhouse, Lever, Ashby, Workday, SmartRecruiters, Workable) of about 80 companies, from Stripe, Visa and Circle to Paxos and BVNK. `jobs.py fetch` keeps every role first posted in the window, and `jobs.py push` adds it to the Jobs Tracker. Push skips roles already tracked and reposts of an open role, and closes roles that have left their board. It flags boards where most roles look new at once, which usually means the company switched job-board providers. Each week, companies that raised money or did a deal get checked for a public board and added to the list.
 
-Everything lands in `research-brief.md`, including the full ranked candidate list, discarded items, and any aggregator links flagged for swapping to primary sources.
+Three checks run on every item by default: the event date is confirmed against the primary source, the facts are re-read from the source page, and `news.py check` looks the company up in the News Tracker and searches every past edition, so a running story doesn't run twice under a new headline.
 
-Two checks run on every candidate by default, not on request: the real event date gets confirmed against a primary source rather than a search snippet, and the whole `editions/` archive gets grepped for the candidate's key terms so a slow-building saga doesn't run twice under a fresh headline.
+### Step 2: lineup review
 
-### Step 2: shortlist and pick
-
-The pipeline's only stop. It presents:
-
-- **3 to 4 ranked Big One candidates**, about three lines each: the angle, the strongest data point, the caveat. The top-ranked one is marked as the recommendation.
-- **The Roundup lineup**, one line per item under its group header, so items can be vetoed, added, or promoted to The Big One.
-- **Judgment calls worth surfacing**, when there are any, like a company that ran as The Big One in a recent edition.
-
-Then it waits. "You pick" or "go" runs the top-ranked candidate and notes in the brief that it ran as the default. Promoting a Roundup item triggers the deep dive on it and backfills its slot. Rejecting the whole shortlist sends it back to research rather than forcing a weak story through. Roundup vetoes made here are final.
+The only stop. You see the week in numbers, every item section by section, 8 to 10 featured-job candidates, and any judgment calls (a likely duplicate kept as a new development, thin sourcing, an excluded board). Veto, add, reword or pick jobs; "go" runs it as presented. An item vetoed as wrong is deleted; one cut for space stays in the tracker.
 
 ### Step 3: draft
 
-Writes the publish-ready issue to `draft.md` in a fixed structure:
-
-- Metadata block: 3 ranked subject line options (all prefixed 🪙, the first carrying a searchable named entity) plus an SEO description under 160 characters
-- Cold open, 50 to 80 words, one surprising stat and a light joke, followed by a 3-item preview list
-- 📊 The Numbers table
-- 💥 The Big One, 300 to 450 words, story-specific mini-headers, a "By the numbers" block, and a point-of-view kicker
-- 🗞️ The Roundup, grouped only under headers that earned items
-- ⏳ Worth Your Time
-- Sign-off with a point of view, not a recap
-
-Two sponsor placeholders sit at fixed positions: Slot 1 above the cold open, Slot 2 between The Big One and The Roundup. The skill never writes sponsor copy, only placeholders.
+`news.py render` prints the categorized sections from news.json, so the newsletter and the News Tracker never disagree. The skill writes the metadata block (3 subject lines, SEO description), the intro, the numbers table, Who's hiring, an optional Worth your time, and the sign-off around them. Sponsor Slot 1 sits above the intro; Slot 2 sits after Fundraising.
 
 ### Step 4: quality check
 
-A 24-item checklist runs against the draft and every failure gets fixed before publishing. It covers em dashes, banned filler phrases, citation anchor quality, section word counts, subject line format, sponsor slot placement, joke density (one per section maximum), in-window event dates, the archive duplicate grep, whether the draft reflects the story you actually picked, and total body length of 900 to 1,400 words.
-
-Three of those items exist because formatting checks alone do not catch being wrong. They require that every comparison traces to a source rather than to recall, that self-derived numbers get recomputed and stated in the right direction, and that named weekdays match their dates.
+`news.py check` and `news.py lint` enforce the mechanical rules: 20 words per item, one well-anchored link, no dashes, no bare URLs, valid tags, in-window dates, no duplicates. The checklist covers what scripts can't: amounts, rounds, titles and deal stages match the source; tiers and currency conversions are right; derived numbers are recomputed; weekdays match dates; featured roles are still open.
 
 ### Step 5: publish
 
-Creates a new Notion page under the Stablecoin Brief parent page, titled `DRAFT: [theme] ([Mon D-D, YYYY])` with a 🪙 icon, containing the full draft. Skipped if the user asked for a local draft or Notion is unavailable.
+Pushes every item to the News Tracker, ticks Featured on the chosen roles, and creates a `DRAFT: [theme] ([dates])` page under the Stablecoin Brief page with the full draft. Every command is safe to re-run.
 
-## Voice in one line
+## First-time setup
 
-Morning Brew tone applied to serious research. Casual and conversational, written to one reader, with every claim sourced and every number given context. Humor seasons the news; it is not the meal.
-
-## Output
-
-Drafts are written to `editions/[YYYY-MM-DD]-weekly/` and gitignored. This repo tracks the instructions, not the issues.
+The trackers already exist (IDs in `data/notion.json`). On a fresh workspace, run `python3 scripts/setup_notion.py` once with a Notion integration that has access to the Stablecoin Brief page.
 
 ## Editing the skill
 
-Change the standing voice, style rules, content pillars, or trusted sources in `CLAUDE.md`. Change the pipeline, section structure, word counts, or quality gates in `skills/weekly/SKILL.md`. The two are meant to stay consistent, so a change to one usually wants a look at the other.
+Change the standing voice, style rules, scope or sources in `CLAUDE.md`. Change the pipeline, sections or quality gates in `skills/weekly/SKILL.md`. Change tags in `scripts/setup_notion.py` (and add the new option to the Notion database too). Add job boards in `data/job-boards.json`, after confirming the board belongs to that company: slugs collide.
 
 ## Error handling
 
-The skill degrades rather than fabricates. A weak Big One candidate gets picked with the limitation noted in the brief. Fewer than 8 roundup items ships short instead of padded. An unavailable metric shows `n/a` with a note. Unverifiable claims are dropped and flagged. Nothing appears in both The Big One and The Roundup.
+The skill degrades rather than fabricates. A thin week ships short instead of padded. A failed job board is noted and skipped. An unavailable metric shows `n/a` with a note. Unverifiable claims are dropped and flagged. If Notion is down, everything stays local and the push commands can run later.

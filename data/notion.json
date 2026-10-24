@@ -1,0 +1,13 @@
+{
+  "parent_page_id": "32b7f3d2-e709-80bf-b981-e69ae10cc902",
+  "news": {
+    "database_id": "086adc2c-be7f-4527-81de-add2a6a75336",
+    "data_source_id": "77f13e8f-7ca1-49c0-ad7f-cf3a186e18e4",
+    "url": "https://app.notion.com/p/086adc2cbe7f452781deadd2a6a75336"
+  },
+  "jobs": {
+    "database_id": "e952cb0f-c32d-4d01-ba70-3eb232e64d56",
+    "data_source_id": "5c42051c-92c5-4ca0-9294-183757829163",
+    "url": "https://app.notion.com/p/e952cb0fc32d4d01ba703eb232e64d56"
+  }
+}

@@ -2,93 +2,120 @@
 Weekly newsletter, published Mondays.
 Each issue covers the most recent complete Monday
 through Sunday.
-Covers the stablecoin industry for financially literate,
-crypto-aware readers.
+Tracks the money, people and licenses moving through
+stablecoins and payments: who raised, who bought whom,
+who moved where, who got licensed, what launched, and
+who's hiring.
 ## Audience
-Readers know what USDC, USDT, on-chain settlement, and the
-GENIUS Act are. Do not explain basics. Treat them as smart
-and busy.
-Every edition must clear this bar: reader finishes thinking
-"I did not know that" or "I knew the story but had not
-thought about it that way."
-If the piece does not clear that bar, it is not ready.
+Readers work in or around stablecoins and payments:
+operators, investors, BD, compliance. They know what
+USDC, USDT, on-chain settlement, MiCA and the GENIUS Act
+are. Do not explain basics. Treat them as smart, busy
+scanners.
+Every edition must clear this bar: a reader who spends
+three minutes on it knows every deal, move and license
+that mattered this week, and finds at least one they
+had not seen.
+If the edition does not clear that bar, it is not ready.
+## Format
+Every news item is one sentence of 20 words or fewer,
+grouped by category: Fundraising (tiered by size), M&A,
+People moves, Regulation & licensing, Launches,
+Partnerships, Layoffs & shutdowns, then Who's hiring.
+Modeled on The LegalTech Fund's Funds Flow and The
+Docket.
+Every researched item is logged in the Notion News
+Tracker (a filterable deals-and-moves database in the
+spirit of DefiLlama Raises), and every new role at
+tracked companies in the Notion Jobs Tracker. The
+newsletter is the curated cut; the trackers are the
+complete record. IDs are in data/notion.json.
 ## Voice
-Milk Road meets The Ken.
-MILK ROAD SIDE:
-- Casual, conversational, occasionally funny
-- Write like a smart friend explaining something important
-  over coffee
-- Dry wit welcome. Short punchy sentences when landing a point
-- Never sound like a press release or a Bloomberg terminal
-THE KEN SIDE:
-- Every claim sourced, every number has context
-- Every "so what" is answered explicitly
-- Find the character in the story. Real companies, real
-  people, real decisions.
-- Find the non-obvious angle. The complication. The thing
-  that makes the obvious take incomplete.
-THE BALANCE:
-Casual tone, serious research. Never sacrifice accuracy for
-a joke. Never sacrifice readability for thoroughness.
+Items read like a sharp wire service: plain, specific,
+past tense, numbers instead of adjectives.
+Personality lives in the subject line, the intro and the
+sign-off only. A light line in the intro is welcome.
+Never a joke inside an item.
 ## Style Rules (Non-Negotiable)
-- No em dashes
+- No em dashes, no en dashes, no "--" as punctuation
 - No filler: "it remains to be seen", "in the ever-evolving
   landscape", "as the industry matures", "going forward",
   "at the end of the day", "significant milestone",
   "it is worth noting"
 - No corporate jargon
 - No rhetorical question openers
-- No definition openers
 - No passive voice where avoidable
-- All numbers need comparison context
-- All claims need inline citations, hyperlinked on the most
-  specific meaningful phrase in the sentence. Never anchor on
-  "here", "this", "report", "announced", or a bare
-  publication name, and never float a source tag at the end
-  of a sentence
+- Every item: one sentence, 20 words or fewer, leading
+  with the company name
+- Every item carries exactly one inline citation,
+  hyperlinked on the most specific meaningful phrase (the
+  action: "raised $30M", "named Jane Smith CFO"). Never
+  anchor on "here", "this", "report", "announced", or a
+  bare publication name, and never float a source tag at
+  the end of a sentence
+- Numbers are specific (amount, round, valuation when
+  disclosed). Comparison context goes in the intro and the
+  numbers table, and inside an item only when it fits and
+  has a source
+- Deal stage is a fact: raised vs raising, agreed vs
+  completed, granted vs applied for
 - End every edition with a point of view, not a summary
 ## Tone Calibration
-WRONG: "Stablecoins are experiencing significant regulatory
-scrutiny as lawmakers seek to establish frameworks."
-RIGHT: "Congress finally decided to do something about
-stablecoins. Whether that something is good is a separate
-question entirely."
-WRONG: "It remains to be seen how this will impact the
-broader ecosystem going forward."
-RIGHT: "Nobody knows how this plays out. But here is
-what to watch."
-WRONG: "Tether processed $13.3 trillion in transactions."
-RIGHT: "Tether processed $13.3 trillion in transactions
-last year. For context, that is roughly what Visa
-did in 2019."
-## Content Pillars (Priority Order)
-1. Regulation: GENIUS Act, MiCA, Treasury, OCC, tax treatment
-2. Issuer dynamics: USDC, USDT, yield-bearing coins,
-   bank-issued tokens, new entrants
-3. Payments infrastructure: Visa, Mastercard, on/off ramps,
-   B2B settlement
-4. Institutional adoption: treasury management, RWA
-   tokenization, corporate uptake
-5. Emerging markets: remittances, cross-border, EM adoption
-6. Technology and protocol: mechanisms, de-peg events,
-   chain-level shifts
-## Story Selection Criteria
-When ranking candidates for the highlight story, prioritize:
-- A non-obvious angle most coverage has missed
-- A strong data point that reframes the narrative
-- A real character or company whose decision drives the story
-- Stakes that matter beyond crypto-native audiences
-- Something that happened or broke inside the coverage week,
-  confirmed against the primary source rather than the date
-  on a piece of follow-up coverage
+WRONG: "Big news for Acme as the company welcomes a
+seasoned executive to its leadership team."
+RIGHT: "Acme Pay named Jane Smith CFO; she ran treasury
+at Stripe for six years."
+WRONG: "Northwind Pay Secures $30 Million Series B To
+Accelerate Its Mission Of Transforming Payouts."
+RIGHT: "Northwind Pay raised a $30M Series B led by Acme
+Ventures for stablecoin payouts to Latin American
+freelancers."
+WRONG (intro): "It was a busy week for funding."
+RIGHT (intro): "Stablecoin and payments startups raised
+$412M across 14 rounds, double last week. Most of it
+went to the plumbing nobody sees."
+## Coverage Scope
+Stablecoins plus all of payments, with or without a
+crypto angle:
+1. Stablecoins: issuers, issuance infrastructure,
+   payment chains, reserves, bank-issued tokens
+2. Crypto payments: on/off ramps, wallets, custody,
+   stablecoin cards, merchant acceptance
+3. Payments: PSPs, acquirers, cross-border and
+   remittance, B2B and spend, card issuing, open banking,
+   BaaS, core processing
+4. Adjacent only when payments-led: exchanges, tokenization
+   with a stablecoin cash leg, compliance vendors
+Out: token prices, trading, DeFi yield, NFTs, memecoins,
+and lending, insurance or wealth news without a payments
+product in it.
+## Item Selection Criteria
+An item runs only if:
+- It happened inside the coverage week, confirmed
+  against the primary source rather than the date on a
+  piece of follow-up coverage
+- It names a company plus a hard fact: an amount, a
+  person, a license, a live date, a counterparty
+- Neither the News Tracker nor any past edition already
+  covered it, unless this is a genuinely new development
+  in a running story (closed after "raising", granted
+  after "applied for")
+Within a section, rank by size, the weight of the names
+involved (lead investor, acquirer, regulator), firsts,
+and what it changes for someone in payments.
 ## Trusted Sources
-Primary: Artemis, DeFiLlama, Nansen, Dune Analytics,
-official company blogs, regulatory filings, earnings
-transcripts, on-chain data
-Secondary: CoinDesk, The Block, Bloomberg, Reuters, FT,
-WSJ, Axios, Decrypt, Bankless, a16z crypto research,
-Fed publications, BIS papers, Mizuho/Clear Street
-analyst reports
+Primary: company newsrooms and blogs, press-release wires
+(PR Newswire, Business Wire, GlobeNewswire), regulatory
+filings and registers (SEC EDGAR including Form D, OCC,
+NYDFS, FCA, ESMA MiCA register, MAS, VARA), earnings
+transcripts, DeFiLlama, Artemis, Dune
+Deal and people flow: DefiLlama Raises, Crunchbase News,
+This Week in Fintech, Fintech Business Weekly,
+TechCrunch, The Block, CoinDesk, Fortune Crypto,
+Blockworks, Finextra, PYMNTS, Payments Dive, The Paypers,
+FinTech Futures, American Banker, Ledger Insights,
+Sifted, TechCabal, LatamList, Contxto, Entrackr, Inc42,
+DealStreetAsia
 ## Sponsor Slots
 Every draft includes two clearly marked placeholders
 in exactly this format:
@@ -98,6 +125,6 @@ in exactly this format:
 ---
 [SPONSOR SLOT 2 — $100 rack / $50 floor — Mid-content native]
 ---
-Slot 1 sits at the top of the email, above the cold open.
-Slot 2 sits between The Big One and The Roundup.
+Slot 1 sits at the top of the email, above the intro.
+Slot 2 sits directly after the Fundraising section.
 Never write sponsor copy. Placeholders only.
